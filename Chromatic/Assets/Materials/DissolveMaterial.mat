@@ -62,7 +62,7 @@ Material:
     - _ReceiveShadows: 1
     - _SpeedColor: 1
     - _SrcBlend: 1
-    - _State: -0.03
+    - _State: 0
     - _Surface: 0
     - _WorkflowMode: 0
     - _ZTest: 4
