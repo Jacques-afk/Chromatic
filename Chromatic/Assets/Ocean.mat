@@ -35,11 +35,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Depth: 4.25
-    - _DepthFalloff: 1.32
+    - _Depth: 11.88
+    - _DepthFalloff: 4.12
+    - _FoamShore: 0.9
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
     - _MainColor: {r: 0.30566037, g: 0.3143077, b: 1, a: 0}
     - _SideColor: {r: 0.35542893, g: 0.727786, b: 0.9811321, a: 0}
   m_BuildTextureStacks: []
