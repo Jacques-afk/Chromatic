@@ -35,14 +35,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DepthFade: 13.58
+    - _DepthFade: 11.8
     - _FoamAmt: 5.82
     - _FoamCutoff: 1
     - _FoamScale: 77.56
     - _FoamSpeed: 0.9
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RefractionScale: 2.64
+    - _RefractionScale: 3.2
     - _RefractionSpeed: 0.04
     - _RefractionStrength: 20.8
     m_Colors:
