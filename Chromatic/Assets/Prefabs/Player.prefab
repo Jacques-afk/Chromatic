@@ -110,7 +110,6 @@ GameObject:
   - component: {fileID: 8875630372706359812}
   - component: {fileID: 8875630372706359813}
   - component: {fileID: 2853838994684840963}
-  - component: {fileID: 389116362418316174}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -208,9 +207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d3584e6bc505045b000d17ea1309ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 32
-  sprintSpeed: 0
-  groundDrag: 6
+  moveSpeed: 25
+  sprintSpeed: 55
+  groundDrag: 3
   jumpForce: 60
   jumpCooldown: 0.25
   airMulitplier: 0.1
@@ -218,19 +217,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   orientation: {fileID: 8875630373608596527}
---- !u!135 &389116362418316174
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8875630372706359809}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8875630373608596526
 GameObject:
   m_ObjectHideFlags: 0
