@@ -35,10 +35,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DepthFade: 11.8
-    - _FoamAmt: 5.82
+    - _DepthFade: 13.7
+    - _FoamAmt: 2.7
     - _FoamCutoff: 1
-    - _FoamScale: 77.56
+    - _FoamScale: 34.7
     - _FoamSpeed: 0.9
     - _QueueControl: 0
     - _QueueOffset: 0
