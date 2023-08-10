@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float airMulitplier;
     private bool canJump = true;
     private bool isSprint = false;
+    private bool isWalk = false;
 
     [Header("Ground Check")]
     public LayerMask isGround;
@@ -30,6 +31,14 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    [Header("Animation")]
+    Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
+
     private void Start()
     {
         // assigns the rigid body
@@ -37,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
         //freezes the rotation
         rb.freezeRotation = true;
+        
 
     }
 
@@ -46,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log(isGrounded);
         PlayerInput();
 
+
         if (isGrounded)
         {
             rb.drag = groundDrag;
@@ -54,11 +65,40 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.drag = 0;
         }
+
+        Debug.Log(isWalk);
+
+        HandleAnimation();
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
+    }
+
+
+    private void HandleAnimation()
+    {
+        //Getting parameter values from animator
+        bool isWalking = animator.GetBool("isWalking");
+        bool isRunning = animator.GetBool("isRunning");
+
+        if (isSprint)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+        if (isWalk)
+        {
+            animator.SetBool("isWalking",true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
 
     /// <summary>
@@ -68,6 +108,34 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+        if(verticalInput != 0)
+        {
+            if (isSprint)
+            {
+                isWalk = false;
+            }
+            else
+            {
+                isWalk = true;
+            }
+            
+        }
+        else if (horizontalInput != 0)
+        {
+            if (isSprint)
+            {
+                isWalk = false;
+            }
+            else
+            {
+                isWalk = true;
+            }
+        }
+        else
+        {
+            isWalk = false;
+        }
     }
 
     private void MovePlayer()
@@ -90,7 +158,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10.0f * airMulitplier, ForceMode.Force);
         }
-        
     }
 
     private void SpeedClamp()
