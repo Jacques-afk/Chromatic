@@ -82,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
         //Getting parameter values from animator
         bool isWalking = animator.GetBool("isWalking");
         bool isRunning = animator.GetBool("isRunning");
+        bool isJump = animator.GetBool("isJump");
 
         if (isSprint)
         {
@@ -98,6 +99,14 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             animator.SetBool("isWalking", false);
+        }
+        if(canJump == false)
+        {
+            animator.SetBool("isJump", true);
+        }
+        else
+        {
+            animator.SetBool("isJump", false);
         }
     }
 
