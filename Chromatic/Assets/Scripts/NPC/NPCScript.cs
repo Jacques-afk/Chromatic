@@ -44,12 +44,19 @@ public class NPCScript : MonoBehaviour
     public void SetAction(string action)
     {
         if (this != InterfaceManager.instance.currentNPC)
+        {
             return;
+        }
 
         if (action == "shake")
         {
             Camera.main.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
         }
+        else
+        {
+            Debug.Log("hi");
+        }
+
         /*else
         {
             PlayParticle(action);

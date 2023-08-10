@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = 0;
         }
 
-        Debug.Log(isWalk);
+       // Debug.Log(isWalk);
 
         HandleAnimation();
     }

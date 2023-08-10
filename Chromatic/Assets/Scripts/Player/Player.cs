@@ -14,12 +14,14 @@ public class Player : MonoBehaviour
 
     public Transform raycastSource;
     public float raycastRange = 5f;
+    private bool isInteract = false;
     private void Start()
     {
     }
 
     private void Update()
     {
+        Raycast();
     }
 
    
@@ -34,7 +36,10 @@ public class Player : MonoBehaviour
         {
             if(hitData.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
-                interactObj.Interact();
+                if (isInteract)
+                {
+                    interactObj.Interact();
+                }
             }
         }
     }
@@ -44,7 +49,8 @@ public class Player : MonoBehaviour
 
     void OnInteract()
     {
-        Raycast();
+        isInteract = !isInteract;
+        Debug.Log(isInteract);
     }
     #endregion
 }

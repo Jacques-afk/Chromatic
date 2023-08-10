@@ -34,7 +34,7 @@
                 },
                 {
                     "name": "Interact",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "cd8e271f-853c-4b6e-854f-0a824a63ba5d",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -284,7 +284,7 @@
                 {
                     "name": "",
                     "id": "398054ae-bff0-4ef2-845e-72a8b6c6f5a2",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/b",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

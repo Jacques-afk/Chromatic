@@ -38,8 +38,7 @@ namespace TMPro
 
 public class TMP_Animated : TextMeshProUGUI
 {
-    [SerializeField]
-    private float speed = 10;
+    [SerializeField]private float speed = 10;
     public EmotionEvent onEmotionChange;
     public ActionEvent onAction;
     public TextRevealEvent onTextReveal;
@@ -56,13 +55,13 @@ public class TMP_Animated : TextMeshProUGUI
         // Splits the whole text into parts using < and > tags.
         // Even numbers in array are texts and odd numbers are tags.
 
-        string[] subTexts = newText.Split('<', '<');
+        string[] subTexts = newText.Split('<', '>');
 
         //tmp needs to parse built in text, so we only include our non custom tags.
         string displayText = "";
         for(int i = 0; i < subTexts.Length; i++)
         {
-            if(i%2 == 0)
+            if(i % 2 == 0)
             {
                 displayText += subTexts[i];
             }
@@ -72,6 +71,7 @@ public class TMP_Animated : TextMeshProUGUI
             }
         }
 
+        //Check if tag is our own tag
         bool isCustomTag(string tag)
         {
             return tag.StartsWith("speed=") || tag.StartsWith("pause=") || tag.StartsWith("emotion=") || tag.StartsWith("action");
@@ -131,6 +131,7 @@ public class TMP_Animated : TextMeshProUGUI
                 }
                 return null;
             }
+            onDialogueEnd.Invoke();
         }
     }
 

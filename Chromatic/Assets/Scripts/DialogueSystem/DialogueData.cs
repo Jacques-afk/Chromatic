@@ -7,10 +7,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DialogueData", menuName = "New Dialogue")]
 public class DialogueData : ScriptableObject
 {
-    /// <summary>
-    /// Stores the speaker name
-    /// </summary>
-    public string speakerName;
 
     /// <summary>
     /// Stores the dialogue
