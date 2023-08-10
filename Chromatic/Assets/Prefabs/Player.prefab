@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 8875630372706359814}
   - component: {fileID: 8875630372706359815}
   - component: {fileID: 8875630372706359812}
+  - component: {fileID: 602411195888635688}
   - component: {fileID: 8875630372706359813}
   - component: {fileID: 2853838994684840963}
+  - component: {fileID: 4968927499428638633}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -66,6 +68,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycastSource: {fileID: 8875630373657820948}
   raycastRange: 5
+--- !u!114 &602411195888635688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8875630372706359809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae79fa5d389caf54a8057bc30f0259c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetGroup: {fileID: 0}
 --- !u!114 &8875630372706359813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +134,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   orientation: {fileID: 8875630373608596527}
+--- !u!65 &4968927499428638633
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8875630372706359809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 2}
+  m_Center: {x: 0, y: 0, z: 1.7}
 --- !u!1 &8875630373608596526
 GameObject:
   m_ObjectHideFlags: 0
