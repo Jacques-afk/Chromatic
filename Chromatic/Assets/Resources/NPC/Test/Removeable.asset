@@ -10,13 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32ed43a6777800e448948e570d59b244, type: 3}
-  m_Name: DialogueTest2
+  m_Name: Removeable
   m_EditorClassIdentifier: 
-  dialogueText:
-  - '<speed=50><size=20>Kayen <speed=5>...
-
-'
-  - <speed=30>I think the dialogue box is....
-  - <pause=1><speed=20> too small <speed=5>...<speed=30> maybe we can make it...
-  - <size=35><b>BIGGER?</b>
-  - <speed=35> jk what do yall think i havent add the noise yet
+  dialogueText: []

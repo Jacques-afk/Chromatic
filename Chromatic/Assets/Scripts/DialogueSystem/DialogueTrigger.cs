@@ -23,7 +23,6 @@ public class DialogueTrigger : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("ran");
         if (Input.GetKeyDown(KeyCode.E) && !ui.inDialogue && currentNpc != null)
         {
             Debug.Log("loaded");
