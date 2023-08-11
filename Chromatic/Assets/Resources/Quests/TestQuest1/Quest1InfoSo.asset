@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ed43a6777800e448948e570d59b244, type: 3}
-  m_Name: DialogueTest
+  m_Script: {fileID: 11500000, guid: f6b0faf0efc497243ace41bf908cbe28, type: 3}
+  m_Name: Quest1InfoSo
   m_EditorClassIdentifier: 
-  dialogueText:
-  - This
-  - is
-  - a
-  - Test
+  <id>k__BackingField: Quest1InfoSo
+  displayName: Quest 1 Test
+  questPrerequisite: []
+  questStepsPrefabs:
+  - {fileID: 4246712896068787158, guid: 916f4d665a6b1fc4389bd97a8e9e08e6, type: 3}

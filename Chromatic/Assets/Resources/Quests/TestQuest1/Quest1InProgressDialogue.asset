@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 633ab9248efaf844d84872748d948fd3, type: 3}
-  m_Name: NPCTest
+  m_Script: {fileID: 11500000, guid: 32ed43a6777800e448948e570d59b244, type: 3}
+  m_Name: Quest1InProgressDialogue
   m_EditorClassIdentifier: 
-  npcName: rob
-  dialogueData: {fileID: 11400000, guid: b43d092a4ab2d3147a5f579c80dc5389, type: 2}
+  dialogueText:
+  - <speed=50> quest is in progress!!
+  - <speed=20><size =100><b> finish it..</b><speed=50>

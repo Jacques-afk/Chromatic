@@ -10,5 +10,10 @@ public class NPCData : ScriptableObject
 
     public string npcName;
     public DialogueData dialogueData;
+    public QuestInfoSO npcQuest;
+
+    public bool startPoint;
+    public bool endPoint;
+    
 
 }

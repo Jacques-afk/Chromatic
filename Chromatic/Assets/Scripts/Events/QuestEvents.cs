@@ -32,7 +32,7 @@ public class QuestEvents
     public event Action<Quest> onQuestStateChange;
     public void QuestStateChange(Quest quest)
     {
-        if(onQuestStateChange == null)
+        if(onQuestStateChange != null)
         {
             onQuestStateChange(quest);
         }

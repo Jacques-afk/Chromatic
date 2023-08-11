@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Cinemachine;
+using Unity.VisualScripting;
 
 public class NPCScript : MonoBehaviour
 {
+    /// <summary>
+    /// NPC Data, Name, Quest
+    /// </summary>
     public NPCData data;
-    public DialogueData dialogue;
+    [HideInInspector]
+    public QuestState currentQuestState;
+    [HideInInspector]
+    public string questID;
+    [HideInInspector]
+    public bool hasQuest;
 
     public bool isNPCTalking;
 
@@ -16,6 +25,54 @@ public class NPCScript : MonoBehaviour
     //private animator
 
     //public Tranform particlesParent;
+
+
+    private void Awake()
+    {
+
+        //Check if NPC has quest
+        if (data.npcQuest.id != "EmptyScript")
+        {
+            //Gets the quest id from quest.
+            questID = data.npcQuest.id;
+
+            //Sets has Quest to true.
+            hasQuest = true;
+
+        }
+        else
+        {
+            hasQuest = false;
+        }
+
+
+    }
+
+    private void OnEnable()
+    {
+        GameEventsManager.instance.questEvents.onQuestStateChange += QuestStateChange;
+    }
+
+    private void OnDisable()
+    {
+        GameEventsManager.instance.questEvents.onQuestStateChange -= QuestStateChange;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="quest"></param>
+    private void QuestStateChange(Quest quest)
+    {
+        Debug.Log(quest + "run!");
+        //Checks to see if the Quest ID matches the current quest, get the current quest state.
+        if (quest.questInfo.id.Equals(questID))
+        {
+            Debug.Log(quest);
+            currentQuestState = quest.questStateInfo;
+        }
+
+    }
 
     void Start()
     {

@@ -38,6 +38,7 @@ public class QuestManager : MonoBehaviour
             //if the quest meets the requirements
             if(quest.questStateInfo == QuestState.REQUIREMENTS_NOT_MET && CheckRequirementsMet(quest))
             {
+                Debug.Log("ran");
                 //Change the quest state to can start.
                 ChangeQuestState(quest.questInfo.id, QuestState.CAN_START);
             }
@@ -53,6 +54,7 @@ public class QuestManager : MonoBehaviour
     {
         Quest quest = GetQuestById(id);
         quest.questStateInfo = state;
+        Debug.Log("Change Quest of" + id + state);
         GameEventsManager.instance.questEvents.QuestStateChange(quest);
     }
 
@@ -72,16 +74,16 @@ public class QuestManager : MonoBehaviour
         bool meetsRequirements = true;
 
         //to check each quest prerequisites if they are completed or not.
-        foreach (QuestInfoSO prerequisiteQuestInfo in quest.questInfo.questPrerequisites)
+        foreach (QuestInfoSO prerequisiteQuestInfo in quest.questInfo.questPrerequisite)
         {
             //Checks the prerequisite's quest state if its finished.
             if(GetQuestById(prerequisiteQuestInfo.id).questStateInfo != QuestState.FINISHED)
             {
                 //sets the meet requirements to false.
                 meetsRequirements = false;
+                
             }
         }
-
         return meetsRequirements;
     }
     /// <summary>
@@ -94,6 +96,7 @@ public class QuestManager : MonoBehaviour
         Quest quest = GetQuestById(id);
         //Instantiates the current quest step, passes this.transform to place it at the gameobject in the scene.
         quest.InstantiateCurrentQuestStep(this.transform);
+        Debug.Log(this.transform);
         //Changes its state to in progress.
         ChangeQuestState(quest.questInfo.id, QuestState.IN_PROGRESS);
     }
@@ -139,7 +142,7 @@ public class QuestManager : MonoBehaviour
     /// </summary>
     private void ClaimRewards()
     {
-
+        Debug.Log("rewards!!");
     }
 
     private Dictionary<string, Quest> CreateQuestMap()

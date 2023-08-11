@@ -26,6 +26,10 @@ public class InterfaceManager : MonoBehaviour
     public GameObject gameCamera;
     public GameObject dialogueCamera;
 
+
+    //Testing
+    public UnityEventsTest eventsTest;
+
     public void Awake()
     {
         instance = this;
@@ -42,15 +46,41 @@ public class InterfaceManager : MonoBehaviour
         {
             if (canExit)
             {
+                if (currentNPC.hasQuest == true)
+                {
+                    StartorEndQuest();
+                }
                 CameraChange(false);
                 StartCoroutine(FadeUIRoutine(false, 0.2f));
                 StartCoroutine(ResetStateAfterDelay(0.8f));
+                Debug.Log("Dialogue Exited.");
+
+                //Call quest point here.
+                
             }
 
             else if (nextDialogue)
             {
-                animatedText.ReadText(currentNPC.dialogue.dialogueText[dialogueIndex]);
+                animatedText.ReadText(currentNPC.data.dialogueData.dialogueText[dialogueIndex]);
             }
+        }
+    }
+
+    /// <summary>
+    /// Starts or ends the quest if theres a present quest avaialble.
+    /// </summary>
+    private void StartorEndQuest()
+    {
+        Debug.Log("Quest Started.");
+        Debug.Log(currentNPC.currentQuestState);
+        if (currentNPC.currentQuestState.Equals(QuestState.CAN_START) && currentNPC.data.startPoint)
+        {
+            GameEventsManager.instance.questEvents.StartQuest(currentNPC.questID);
+            Debug.Log(currentNPC.data.npcQuest.displayName + "Has started");
+        }
+        else if (currentNPC.currentQuestState.Equals(QuestState.CAN_FINISH) && currentNPC.data.endPoint)
+        {
+            GameEventsManager.instance.questEvents.FinishQuest(currentNPC.questID);
         }
     }
 
@@ -109,7 +139,7 @@ public class InterfaceManager : MonoBehaviour
 
         if (show)
         {
-            animatedText.ReadText(currentNPC.dialogue.dialogueText[0]);
+            animatedText.ReadText(currentNPC.data.dialogueData.dialogueText[0]);
         }
     }
 
@@ -139,7 +169,7 @@ public class InterfaceManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        if (dialogueIndex < currentNPC.dialogue.dialogueText.Count - 1)
+        if (dialogueIndex < currentNPC.data.dialogueData.dialogueText.Count - 1)
         {
             dialogueIndex++;
             nextDialogue = true;

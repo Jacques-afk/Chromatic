@@ -25,7 +25,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && !ui.inDialogue && currentNpc != null)
         {
-            Debug.Log("loaded");
             targetGroup.m_Targets[1].target = currentNpc.transform;
             ui.inDialogue = true;
             ui.CameraChange(true);
@@ -33,7 +32,6 @@ public class DialogueTrigger : MonoBehaviour
             ui.ClearText();
             ui.FadeUI(true, 0.2f);
             ui.PlayPopupAnimation(0.3f);
-            Debug.Log("test finished");
         }
     }
 
@@ -57,7 +55,6 @@ public class DialogueTrigger : MonoBehaviour
         if (other.CompareTag("NPC"))
         {
             currentNpc = other.GetComponent<NPCScript>();
-            Debug.Log(currentNpc + "In");
             ui.currentNPC = currentNpc;
         }
     }
@@ -66,7 +63,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         
         currentNpc = null;
-        Debug.Log(currentNpc + "out");
         ui.currentNPC = currentNpc;
     }
 }

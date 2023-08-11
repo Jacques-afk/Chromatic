@@ -11,7 +11,7 @@ public class QuestInfoSO : ScriptableObject
     public string displayName;
 
     [Header("Quest Requirements")]
-    public QuestInfoSO[] questPrerequisites;
+    public QuestInfoSO[] questPrerequisite;
 
     [Header("Quest Step Prefabs")]
     public GameObject[] questStepsPrefabs;

@@ -10,9 +10,15 @@ public class GameEventsManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            //Initialize all events
+        }
 
-        //Initialize all events
         questEvents = new QuestEvents();
+
+
+
     }
 }
