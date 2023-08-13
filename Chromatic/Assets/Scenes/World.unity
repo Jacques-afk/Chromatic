@@ -3487,7 +3487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &375222730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13754,7 +13754,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019323538}
-  m_LocalRotation: {x: 0.08592996, y: 0.000000017670335, z: -0.0000000015240483, w: 0.9963012}
+  m_LocalRotation: {x: 0.08592996, y: -0.000000017670331, z: 0.000000001524048, w: 0.9963012}
   m_LocalPosition: {x: 77.40604, y: 79.05894, z: 116.2515}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19240,6 +19240,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cafe
       objectReference: {fileID: 0}
+    - target: {fileID: 6257288565946718409, guid: efbcfc65f874a3048baba29105754c45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efbcfc65f874a3048baba29105754c45, type: 3}
 --- !u!1001 &1517047855
@@ -19277,12 +19282,12 @@ PrefabInstance:
     - target: {fileID: 904927092887355474, guid: 1d3d4a5f7bef98e478f675bf2b334f11,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017670333
+      value: -0.00000001767033
       objectReference: {fileID: 0}
     - target: {fileID: 904927092887355474, guid: 1d3d4a5f7bef98e478f675bf2b334f11,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000015240479
+      value: 0.0000000015240476
       objectReference: {fileID: 0}
     - target: {fileID: 2782879396554975769, guid: 1d3d4a5f7bef98e478f675bf2b334f11,
         type: 3}
@@ -21778,7 +21783,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1840380277
 BoxCollider:
   m_ObjectHideFlags: 0
