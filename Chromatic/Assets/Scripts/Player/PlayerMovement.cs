@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isSprint = false;
     private bool isWalk = false;
 
+    private InterfaceManager ui;
+
     [Header("Ground Check")]
     public LayerMask isGround;
     bool isGrounded;
@@ -46,6 +48,9 @@ public class PlayerMovement : MonoBehaviour
 
         //freezes the rotation
         rb.freezeRotation = true;
+
+        //Store the active Interface Manager
+        ui = InterfaceManager.instance;
         
 
     }
@@ -115,8 +120,11 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void PlayerInput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        if (!ui.inDialogue)
+        {
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            verticalInput = Input.GetAxisRaw("Vertical");
+        }
 
         if(verticalInput != 0)
         {
@@ -151,22 +159,26 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        if (isGrounded)
+        if (!ui.inDialogue)
         {
-            if (isSprint)
+            if (isGrounded)
             {
-                rb.AddForce(moveDirection.normalized * sprintSpeed * 13.0f, ForceMode.Force);
+                if (isSprint)
+                {
+                    rb.AddForce(moveDirection.normalized * sprintSpeed * 13.0f, ForceMode.Force);
+                }
+                else
+                {
+                    rb.AddForce(moveDirection.normalized * moveSpeed * 13.0f, ForceMode.Force);
+                }
+
             }
             else
             {
-                rb.AddForce(moveDirection.normalized * moveSpeed * 13.0f, ForceMode.Force);
+                rb.AddForce(moveDirection.normalized * moveSpeed * 10.0f * airMulitplier, ForceMode.Force);
             }
-            
         }
-        else
-        {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10.0f * airMulitplier, ForceMode.Force);
-        }
+        
     }
 
     private void SpeedClamp()
@@ -209,16 +221,17 @@ public class PlayerMovement : MonoBehaviour
     #region Input Event
     void OnJump()
     {
-        Debug.Log("JUMP!");
-
-        //Check to see if player is grounded and can jump
-        if (isGrounded && canJump)
+        if (!ui.inDialogue)
         {
-            canJump = false;
-            Jump();
-            Invoke(nameof(ResetJump), jumpCooldown);
+            //Check to see if player is grounded and can jump
+            if (isGrounded && canJump)
+            {
+                canJump = false;
+                Jump();
+                Invoke(nameof(ResetJump), jumpCooldown);
 
-            
+
+            }
         }
     }
 
