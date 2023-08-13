@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using Cinemachine;
 using Unity.VisualScripting;
 
-public class DialogueTrigger : MonoBehaviour
+public class InteractionTrigger : MonoBehaviour
 {
     /// <summary>
     /// Reference to the Interface Manager, which manages the dialogue system
@@ -22,6 +22,7 @@ public class DialogueTrigger : MonoBehaviour
     /// </summary>
     public CinemachineTargetGroup targetGroup;
 
+    private string npcName;
     /// <summary>
     /// Called when the game starts, stores reference to the interface manager's instance
     /// </summary>
@@ -39,9 +40,12 @@ public class DialogueTrigger : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
+        ui.interactBoxAnimator.SetBool("canInteract", true);
         if (other.CompareTag("NPC"))
         {
             currentNpc = other.GetComponent<NPCScript>();
+            npcName = currentNpc.data.npcName;
+            ui.interactBoxText.text = "Talk to " + npcName;
             ui.currentNPC = currentNpc;
         }
     }
@@ -53,6 +57,7 @@ public class DialogueTrigger : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
+        ui.interactBoxAnimator.SetBool("canInteract", false);
         currentNpc = null;
         ui.currentNPC = currentNpc;
     }
@@ -72,6 +77,7 @@ public class DialogueTrigger : MonoBehaviour
             ui.ClearText();
             ui.FadeUI(true, 0.2f);
             ui.PlayPopupAnimation(0.3f);
+            ui.dialogueArrow.SetActive(false);
             ui.currentDialogueEnded = false;
         }
     }

@@ -14,6 +14,10 @@ public class InterfaceManager : MonoBehaviour
     public TMP_Animated animatedText;
     public Image nameBubble;
     public TextMeshProUGUI nameTMP;
+    public GameObject dialogueArrow;
+    public GameObject interactBox;
+    public Animator interactBoxAnimator;
+    public TextMeshProUGUI interactBoxText;
 
     [HideInInspector]
     public NPCScript currentNPC;
@@ -39,12 +43,14 @@ public class InterfaceManager : MonoBehaviour
     private void Start()
     {
         animatedText.onDialogueEnd.AddListener(() => EndDialogue());
+        
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && inDialogue)
         {
+            interactBox.SetActive(false);
             if (canExit)
             {
                 //Switches back the camera
@@ -59,6 +65,8 @@ public class InterfaceManager : MonoBehaviour
                     StartorEndQuest();
                 }
 
+                interactBox.SetActive(true);
+
             }
 
             else if (nextDialogue)
@@ -66,6 +74,7 @@ public class InterfaceManager : MonoBehaviour
                 //TODO - Make sure that text has ended first.
                 if (currentDialogueEnded)
                 {
+                    dialogueArrow.SetActive(false);
                     //Check which state the current quest is in.
                     if (currentNPC.currentQuestState.Equals(QuestState.CAN_START))
                     {
@@ -218,6 +227,7 @@ public class InterfaceManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        dialogueArrow.SetActive(true);
         //Check which state the current quest is in.
         if (currentNPC.currentQuestState.Equals(QuestState.CAN_START))
         {
