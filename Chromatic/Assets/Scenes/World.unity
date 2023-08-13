@@ -13633,7 +13633,7 @@ GameObject:
   - component: {fileID: 1043321651}
   - component: {fileID: 1043321650}
   m_Layer: 0
-  m_Name: ChimneySmoke (1)
+  m_Name: Volcanoe SmokeVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13724,8 +13724,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043321649}
   m_LocalRotation: {x: -0.44802707, y: -0, z: -0, w: 0.89402}
-  m_LocalPosition: {x: 270.55, y: 25.144, z: -0.7}
-  m_LocalScale: {x: 43.611877, y: 43.611877, z: 43.611877}
+  m_LocalPosition: {x: 270.4, y: 39.755, z: 1.2}
+  m_LocalScale: {x: 25.880161, y: 25.880161, z: 25.880161}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -19209,17 +19209,17 @@ PrefabInstance:
     - target: {fileID: 5273869782185052219, guid: 1d3d4a5f7bef98e478f675bf2b334f11,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.06279693
+      value: 0.06279692
       objectReference: {fileID: 0}
     - target: {fileID: 5273869782185052219, guid: 1d3d4a5f7bef98e478f675bf2b334f11,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016652281
+      value: 0.000000018237074
       objectReference: {fileID: 0}
     - target: {fileID: 5273869782185052219, guid: 1d3d4a5f7bef98e478f675bf2b334f11,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000010477803
+      value: -0.0000000011474969
       objectReference: {fileID: 0}
     - target: {fileID: 7572423805210493200, guid: 1d3d4a5f7bef98e478f675bf2b334f11,
         type: 3}
