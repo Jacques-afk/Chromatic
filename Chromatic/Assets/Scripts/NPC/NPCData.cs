@@ -14,6 +14,10 @@ public class NPCData : ScriptableObject
 
     public bool startPoint;
     public bool endPoint;
+
+    public DialogueData dialogueQuestStart;
+    public DialogueData dialogueQuestInProgress;
+    public DialogueData dialogueQuestEnded;
     
 
 }

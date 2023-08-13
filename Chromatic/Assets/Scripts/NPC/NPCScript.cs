@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Cinemachine;
-using Unity.VisualScripting;
+using UnityEngine.AI;
 
 public class NPCScript : MonoBehaviour
 {
@@ -11,16 +11,32 @@ public class NPCScript : MonoBehaviour
     /// NPC Data, Name, Quest
     /// </summary>
     public NPCData data;
+    
+    /// <summary>
+    /// Current active Quest State
+    /// </summary>
     [HideInInspector]
     public QuestState currentQuestState;
+
+    /// <summary>
+    /// String ID of Quest
+    /// </summary>
     [HideInInspector]
     public string questID;
+
+    /// <summary>
+    /// Boolean if NPC has a quest
+    /// </summary>
     [HideInInspector]
     public bool hasQuest;
 
+    /// <summary>
+    /// Boolean for if NPC is talking.
+    /// </summary>
     public bool isNPCTalking;
 
     private TMP_Animated animatedText;
+
     //private DialogueAudio
     //private animator
 

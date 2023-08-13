@@ -17,3 +17,6 @@ MonoBehaviour:
   npcQuest: {fileID: 11400000, guid: 25f93e4b3310c6b46a9dc501aa6aba52, type: 2}
   startPoint: 0
   endPoint: 0
+  dialogueQuestStart: {fileID: 0}
+  dialogueQuestInProgress: {fileID: 0}
+  dialogueQuestEnded: {fileID: 0}

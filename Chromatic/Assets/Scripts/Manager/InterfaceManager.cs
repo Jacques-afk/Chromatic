@@ -21,6 +21,7 @@ public class InterfaceManager : MonoBehaviour
     private int dialogueIndex;
     public bool canExit;
     public bool nextDialogue;
+    public bool currentDialogueEnded = true;
 
     [Header("Cameras")]
     public GameObject gameCamera;
@@ -46,23 +47,55 @@ public class InterfaceManager : MonoBehaviour
         {
             if (canExit)
             {
-                if (currentNPC.hasQuest == true)
-                {
-                    StartorEndQuest();
-                }
+                //Switches back the camera
                 CameraChange(false);
+                //
                 StartCoroutine(FadeUIRoutine(false, 0.2f));
                 StartCoroutine(ResetStateAfterDelay(0.8f));
                 Debug.Log("Dialogue Exited.");
 
-                //Call quest point here.
-                
+                if (currentNPC.hasQuest == true)
+                {
+                    StartorEndQuest();
+                }
+
             }
 
             else if (nextDialogue)
             {
-                animatedText.ReadText(currentNPC.data.dialogueData.dialogueText[dialogueIndex]);
+                //TODO - Make sure that text has ended first.
+                if (currentDialogueEnded)
+                {
+                    //Check which state the current quest is in.
+                    if (currentNPC.currentQuestState.Equals(QuestState.CAN_START))
+                    {
+                        animatedText.ReadText(currentNPC.data.dialogueQuestStart.dialogueText[dialogueIndex]);
+                        currentDialogueEnded = false;
+                    }
+                    else if (currentNPC.currentQuestState.Equals(QuestState.IN_PROGRESS))
+                    {
+                        animatedText.ReadText(currentNPC.data.dialogueQuestInProgress.dialogueText[dialogueIndex]);
+                        currentDialogueEnded = false;
+                    }
+                    else if (currentNPC.currentQuestState.Equals(QuestState.CAN_FINISH))
+                    {
+                        animatedText.ReadText(currentNPC.data.dialogueQuestEnded.dialogueText[dialogueIndex]);
+                        currentDialogueEnded = false;
+                    }
+                    else
+                    {
+                        animatedText.ReadText(currentNPC.data.dialogueData.dialogueText[dialogueIndex]);
+                        currentDialogueEnded = false;
+                    }
+
+                    currentDialogueEnded = false;
+                    Debug.Log("Next Dialogue initiated");
+                    
+                }
+                
+                
             }
+            
         }
     }
 
@@ -139,7 +172,23 @@ public class InterfaceManager : MonoBehaviour
 
         if (show)
         {
-            animatedText.ReadText(currentNPC.data.dialogueData.dialogueText[0]);
+            //Check which state the current quest is in.
+            if (currentNPC.currentQuestState.Equals(QuestState.CAN_START)){
+                animatedText.ReadText(currentNPC.data.dialogueQuestStart.dialogueText[0]);
+            }
+            else if (currentNPC.currentQuestState.Equals(QuestState.IN_PROGRESS))
+            {
+                animatedText.ReadText(currentNPC.data.dialogueQuestInProgress.dialogueText[0]);
+            }
+            else if (currentNPC.currentQuestState.Equals(QuestState.CAN_FINISH))
+            {
+                animatedText.ReadText(currentNPC.data.dialogueQuestEnded.dialogueText[0]);
+            }
+            else
+            {
+                animatedText.ReadText(currentNPC.data.dialogueData.dialogueText[0]);
+            }
+            
         }
     }
 
@@ -169,15 +218,66 @@ public class InterfaceManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        if (dialogueIndex < currentNPC.data.dialogueData.dialogueText.Count - 1)
+        //Check which state the current quest is in.
+        if (currentNPC.currentQuestState.Equals(QuestState.CAN_START))
         {
-            dialogueIndex++;
-            nextDialogue = true;
+            if (dialogueIndex < currentNPC.data.dialogueQuestStart.dialogueText.Count - 1)
+            {
+                dialogueIndex++;
+                nextDialogue = true;
+                currentDialogueEnded = true;
+
+            }
+            else
+            {
+                nextDialogue = false;
+                canExit = true;
+            }
+        }
+        else if (currentNPC.currentQuestState.Equals(QuestState.IN_PROGRESS))
+        {
+            if (dialogueIndex < currentNPC.data.dialogueQuestInProgress.dialogueText.Count - 1)
+            {
+                dialogueIndex++;
+                nextDialogue = true;
+                currentDialogueEnded = true;
+
+            }
+            else
+            {
+                nextDialogue = false;
+                canExit = true;
+            }
+        }
+        else if (currentNPC.currentQuestState.Equals(QuestState.CAN_FINISH))
+        {
+            if (dialogueIndex < currentNPC.data.dialogueQuestEnded.dialogueText.Count - 1)
+            {
+                dialogueIndex++;
+                nextDialogue = true;
+                currentDialogueEnded = true;
+
+            }
+            else
+            {
+                nextDialogue = false;
+                canExit = true;
+            }
         }
         else
         {
-            nextDialogue = false;
-            canExit = true;
+            if (dialogueIndex < currentNPC.data.dialogueData.dialogueText.Count - 1)
+            {
+                dialogueIndex++;
+                nextDialogue = true;
+                currentDialogueEnded = true;
+
+            }
+            else
+            {
+                nextDialogue = false;
+                canExit = true;
+            }
         }
     }
 }

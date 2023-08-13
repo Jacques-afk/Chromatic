@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText:
   - <speed=50> quest is in progress!!
-  - <speed=20><size =100><b> finish it..</b><speed=50>
+  - <speed=10><size=40><b> finish it..</b><speed=50>

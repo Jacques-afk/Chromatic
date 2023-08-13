@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633ab9248efaf844d84872748d948fd3, type: 3}
+  m_Name: TestQ2NPC
+  m_EditorClassIdentifier: 
+  npcName: Kayon
+  dialogueData: {fileID: 11400000, guid: 001619888a0712543b985131cb269a1f, type: 2}
+  npcQuest: {fileID: 11400000, guid: a3fd1c6c8339ce44ea4900aec44356dd, type: 2}
+  startPoint: 1
+  endPoint: 1
+  dialogueQuestStart: {fileID: 11400000, guid: a11f7ab5bc27e7542a37d46c256f9217, type: 2}
+  dialogueQuestInProgress: {fileID: 11400000, guid: 8a6d5564085a6bf47bbb6f3d35f50e83,
+    type: 2}
+  dialogueQuestEnded: {fileID: 11400000, guid: 88b31483a58650748a0dcc448eb7b7d2, type: 2}

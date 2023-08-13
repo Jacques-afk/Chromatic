@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText:
   - <speed=50>Congrats! The quest has been completed.
+  - '<speed=50>Go chill or smth
+
+'
