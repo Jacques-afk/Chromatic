@@ -19,8 +19,6 @@ public class Transition : MonoBehaviour
     }
     
 
-
-
     IEnumerator fireworksStop(){
         fireworks.Play();
         yield return new WaitForSeconds(2f);
