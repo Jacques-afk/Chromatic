@@ -36,10 +36,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _DepthFade: 13.7
-    - _FoamAmt: 2.7
-    - _FoamCutoff: 1
-    - _FoamScale: 34.7
-    - _FoamSpeed: 0.9
+    - _FoamAmt: 6.29
+    - _FoamCutoff: 0.94
+    - _FoamScale: 19.6
+    - _FoamSpeed: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RefractionScale: 3.2
