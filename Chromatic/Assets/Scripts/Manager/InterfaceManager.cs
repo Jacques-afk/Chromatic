@@ -43,7 +43,7 @@ public class InterfaceManager : MonoBehaviour
     private void Start()
     {
         animatedText.onDialogueEnd.AddListener(() => EndDialogue());
-        
+
     }
 
     private void Update()
@@ -66,6 +66,8 @@ public class InterfaceManager : MonoBehaviour
                 }
 
                 interactBox.SetActive(true);
+                currentNPC.npcAnimator.SetTrigger("normal");
+
 
             }
 
@@ -99,12 +101,12 @@ public class InterfaceManager : MonoBehaviour
 
                     currentDialogueEnded = false;
                     Debug.Log("Next Dialogue initiated");
-                    
+
                 }
-                
-                
+
+
             }
-            
+
         }
     }
 
@@ -182,7 +184,7 @@ public class InterfaceManager : MonoBehaviour
         if (show)
         {
             //Check which state the current quest is in.
-            if (currentNPC.currentQuestState.Equals(QuestState.CAN_START)){
+            if (currentNPC.currentQuestState.Equals(QuestState.CAN_START)) {
                 animatedText.ReadText(currentNPC.data.dialogueQuestStart.dialogueText[0]);
             }
             else if (currentNPC.currentQuestState.Equals(QuestState.IN_PROGRESS))
@@ -197,7 +199,7 @@ public class InterfaceManager : MonoBehaviour
             {
                 animatedText.ReadText(currentNPC.data.dialogueData.dialogueText[0]);
             }
-            
+
         }
     }
 
@@ -289,5 +291,13 @@ public class InterfaceManager : MonoBehaviour
                 canExit = true;
             }
         }
+
+    }
+
+    public void TurnToPlayer(Transform targetTransform)
+    {
+        Vector3 directionToTarget = targetTransform.position - currentNPC.transform.position;
+        Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
+        currentNPC.transform.rotation = targetRotation;
     }
 }

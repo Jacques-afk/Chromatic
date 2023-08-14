@@ -23,6 +23,10 @@ public class InteractionTrigger : MonoBehaviour
     public CinemachineTargetGroup targetGroup;
 
     private string npcName;
+
+    private Transform selfTransform;
+
+    private PlayerMovement player;
     /// <summary>
     /// Called when the game starts, stores reference to the interface manager's instance
     /// </summary>
@@ -30,6 +34,7 @@ public class InteractionTrigger : MonoBehaviour
     {
         //Get the instance of the Interface manager
         ui = InterfaceManager.instance;
+        player= GetComponent<PlayerMovement>();
 
     }
 
@@ -47,6 +52,16 @@ public class InteractionTrigger : MonoBehaviour
             npcName = currentNpc.data.npcName;
             ui.interactBoxText.text = "Talk to " + npcName;
             ui.currentNPC = currentNpc;
+        }
+
+        else if (other.CompareTag("Interactable"))
+        {
+            ui.interactBoxAnimator.SetBool("canInteract", true);
+            ui.interactBoxText.text = "'E' to interact!";
+        }
+        else
+        {
+            ui.interactBoxAnimator.SetBool("canInteract", false);
         }
     }
 
@@ -70,6 +85,8 @@ public class InteractionTrigger : MonoBehaviour
     {
         if (!ui.inDialogue && currentNpc != null)
         {
+            selfTransform = transform;
+            ui.TurnToPlayer(selfTransform);
             targetGroup.m_Targets[1].target = currentNpc.transform;
             ui.inDialogue = true;
             ui.CameraChange(true);
@@ -79,6 +96,10 @@ public class InteractionTrigger : MonoBehaviour
             ui.PlayPopupAnimation(0.3f);
             ui.dialogueArrow.SetActive(false);
             ui.currentDialogueEnded = false;
+            player.isSprint = false;
+            player.isWalk = false;
+
+
         }
     }
 }

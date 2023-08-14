@@ -39,8 +39,7 @@ public class NPCScript : MonoBehaviour
 
     public bool isHappy;
 
-    //private DialogueAudio
-    //private animator
+    private DialogueAudio dialogueAudio;
 
     //public Tranform particlesParent;
 
@@ -50,7 +49,8 @@ public class NPCScript : MonoBehaviour
 
     private bool isWalking = false;
 
-    private NavMeshAgent navMeshAgent;
+    [HideInInspector]
+    public NavMeshAgent navMeshAgent;
 
     private Vector3 npcVelocity;
     private float npcMovementThreshold = 0.1f;
@@ -107,27 +107,28 @@ public class NPCScript : MonoBehaviour
     {
         npcAnimator = GetComponent<Animator>();
         animatedText = InterfaceManager.instance.animatedText;
-        //animatedText.onEmotionChange.AddListener((newEmotion) => EmotionChanger(newEmotion));
+        animatedText.onEmotionChange.AddListener((newEmotion) => EmotionChanger(newEmotion));
         animatedText.onAction.AddListener((action) => SetAction(action));
         navMeshAgent = GetComponent<NavMeshAgent>();
+        dialogueAudio = GetComponent<DialogueAudio>();
     }
 
-    /*public void EmotionChanger(Emotion e)
+    public void EmotionChanger(Emotion e)
     {
-        if (this != InterfaceManager.instance.currentVillager)
+        if (this != InterfaceManager.instance.currentNPC)
             return;
 
-        animator.SetTrigger(e.ToString());
+         npcAnimator.SetTrigger(e.ToString());
 
-        if (e == Emotion.suprised)
+        /*if (e == Emotion.suprised)
             eyesRenderer.material.SetTextureOffset("_BaseMap", new Vector2(.33f, 0));
 
         if (e == Emotion.angry)
             eyesRenderer.material.SetTextureOffset("_BaseMap", new Vector2(.66f, 0));
 
         if (e == Emotion.sad)
-            eyesRenderer.material.SetTextureOffset("_BaseMap", new Vector2(.33f, -.33f));
-    }*/
+            eyesRenderer.material.SetTextureOffset("_BaseMap", new Vector2(.33f, -.33f));*/
+    }
 
     private void Update()
     {
@@ -166,29 +167,64 @@ public class NPCScript : MonoBehaviour
 
         if (action == "shake")
         {
+            //.main.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
+            // camera.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
             Camera.main.GetComponent<CinemachineImpulseSource>().GenerateImpulse();
         }
+
         else
         {
-            Debug.Log("hi");
+            //PlayParticle(action);
+
+            if (action == "angry")
+            {
+                dialogueAudio.effectSource.clip = dialogueAudio.angry;
+                dialogueAudio.effectSource.Play();
+            }
+            else if (action == "delighted")
+            {
+                dialogueAudio.effectSource.clip = dialogueAudio.delighted;
+                dialogueAudio.effectSource.Play();
+            }
+            else if (action == "happy")
+            {
+                dialogueAudio.effectSource.clip = dialogueAudio.happy;
+                dialogueAudio.effectSource.Play();
+            }
+            else if (action == "rejected")
+            {
+                dialogueAudio.effectSource.clip = dialogueAudio.rejected;
+                dialogueAudio.effectSource.Play();
+            }
+            else if (action == "shocked")
+            {
+                dialogueAudio.effectSource.clip = dialogueAudio.shocked;
+                dialogueAudio.effectSource.Play();
+            }
+            else if (action == "shy")
+            {
+                dialogueAudio.effectSource.clip = dialogueAudio.shy;
+                dialogueAudio.effectSource.Play();
+            }
+            else if (action == "thinking")
+            {
+                dialogueAudio.effectSource.clip = dialogueAudio.thinking;
+                dialogueAudio.effectSource.Play();
+            }
+            else if (action == "wave")
+            {
+                dialogueAudio.effectSource.clip = dialogueAudio.wave;
+                dialogueAudio.effectSource.Play();
+            }
         }
-
-        /*else
-        {
-            PlayParticle(action);
-
-            if (action == "sparkle")
-            {
-                dialogueAudio.effectSource.clip = dialogueAudio.sparkleClip;
-                dialogueAudio.effectSource.Play();
-            }
-            else if (action == "rain")
-            {
-                dialogueAudio.effectSource.clip = dialogueAudio.rainClip;
-                dialogueAudio.effectSource.Play();
-            }
-        } */
     }
+
+    /*public void PlayParticle(string x)
+    {
+        if (particlesParent.Find(x + "Particle") == null)
+            return;
+        particlesParent.Find(x + "Particle").GetComponent<ParticleSystem>().Play();
+    }*/
 
     private void CheckWalk()
     {

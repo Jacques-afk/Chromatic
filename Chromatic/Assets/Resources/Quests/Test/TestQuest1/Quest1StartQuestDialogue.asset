@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Quest1StartQuestDialogue
   m_EditorClassIdentifier: 
   dialogueText:
-  - <speed=50>Lets start quest #1. Go to point A on the map.
-  - <speed=50>Get to it!
+  - <speed=50><emotion=angry><action=shake>Lets start quest #1. Go to point A on
+    the map.
+  - <speed=50>Get to it!<emotion=normal>

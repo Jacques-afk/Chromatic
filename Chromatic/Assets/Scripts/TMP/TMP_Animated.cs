@@ -10,7 +10,7 @@ namespace TMPro
     /// <summary>
     /// Declares Enums for emotions that NPCs can have
     /// </summary>
-    public enum Emotion { happy, sad, suprised, angry };
+    public enum Emotion { terrified, rejected, relieved, shocked, jojopose, happy, waving, worried, delighted, suprise, thinking, dancing, begging, thankful, bashfulshy, angry, normal };
 
 
     // Declares the events for the dialogue system

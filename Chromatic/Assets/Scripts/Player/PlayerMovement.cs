@@ -15,8 +15,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpCooldown;
     public float airMulitplier;
     private bool canJump = true;
-    private bool isSprint = false;
-    private bool isWalk = false;
+    public bool isSprint = false;
+    public bool isWalk = false;
+    public bool isHappy = false;
 
     private InterfaceManager ui;
 
@@ -29,12 +30,14 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
-    Vector3 moveDirection;
+    private Vector3 moveDirection;
 
-    Rigidbody rb;
 
+    [HideInInspector]
     [Header("Animation")]
-    Animator animator;
+    public Animator animator;
+    [HideInInspector]
+    public Rigidbody rb;
 
     private void Awake()
     {
@@ -88,6 +91,15 @@ public class PlayerMovement : MonoBehaviour
         bool isWalking = animator.GetBool("isWalking");
         bool isRunning = animator.GetBool("isRunning");
         bool isJump = animator.GetBool("isJump");
+
+        if (isHappy)
+        {
+            animator.SetBool("isHappy",true);
+        }
+        else
+        {
+            animator.SetBool("isHappy", false);
+        }
 
         if (isSprint)
         {
@@ -237,7 +249,11 @@ public class PlayerMovement : MonoBehaviour
 
     void OnSprint()
     {
-        isSprint = !isSprint;
+        if (isWalk || isSprint)
+        {
+            isSprint = !isSprint;
+        }
+        
     }
 
     #endregion

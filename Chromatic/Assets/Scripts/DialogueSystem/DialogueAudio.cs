@@ -34,6 +34,23 @@ public class DialogueAudio : MonoBehaviour
     /// </summary>
     public AudioSource punctuationSource;
 
+    /// <summary>
+    /// Source of the effect sounds
+    /// </summary>
+    public AudioSource effectSource;
+
+    //Effect Sounds
+    public AudioClip angry;
+    public AudioClip delighted;
+    public AudioClip happy;
+    public AudioClip rejected;
+    public AudioClip shocked;
+    public AudioClip shy;
+    public AudioClip thinking;
+    public AudioClip wave;
+
+
+
 
     /// <summary>
     /// Start is called before the first frame update
