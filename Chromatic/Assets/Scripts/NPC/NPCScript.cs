@@ -37,10 +37,23 @@ public class NPCScript : MonoBehaviour
 
     private TMP_Animated animatedText;
 
+    public bool isHappy;
+
     //private DialogueAudio
     //private animator
 
     //public Tranform particlesParent;
+
+    //Animation Variables
+    [HideInInspector]
+    public Animator npcAnimator;
+
+    private bool isWalking = false;
+
+    private NavMeshAgent navMeshAgent;
+
+    private Vector3 npcVelocity;
+    private float npcMovementThreshold = 0.1f;
 
 
     private void Awake()
@@ -92,9 +105,11 @@ public class NPCScript : MonoBehaviour
 
     void Start()
     {
+        npcAnimator = GetComponent<Animator>();
         animatedText = InterfaceManager.instance.animatedText;
         //animatedText.onEmotionChange.AddListener((newEmotion) => EmotionChanger(newEmotion));
         animatedText.onAction.AddListener((action) => SetAction(action));
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     /*public void EmotionChanger(Emotion e)
@@ -114,6 +129,34 @@ public class NPCScript : MonoBehaviour
             eyesRenderer.material.SetTextureOffset("_BaseMap", new Vector2(.33f, -.33f));
     }*/
 
+    private void Update()
+    {
+        CheckWalk();
+        HandleAnimation();
+        Debug.Log(isWalking);
+    }
+
+    private void HandleAnimation()
+    {
+        if (isHappy)
+        {
+            npcAnimator.SetBool("isHappy",true);
+        }
+        else
+        {
+            npcAnimator.SetBool("isHappy", false);
+        }
+
+        if (isWalking)
+        {
+            npcAnimator.SetBool("isWalking",true);
+
+        }
+        else
+        {
+            npcAnimator.SetBool("isWalking", false);
+        }
+    }
     public void SetAction(string action)
     {
         if (this != InterfaceManager.instance.currentNPC)
@@ -145,5 +188,24 @@ public class NPCScript : MonoBehaviour
                 dialogueAudio.effectSource.Play();
             }
         } */
+    }
+
+    private void CheckWalk()
+    {
+        if(navMeshAgent != null)
+        {
+            float speed;
+            npcVelocity = navMeshAgent.velocity;
+            speed = npcVelocity.magnitude;
+            if (speed > npcMovementThreshold)
+            {
+                isWalking = true;
+            }
+            else
+            {
+                isWalking = false;
+            }
+        }
+        
     }
 }
