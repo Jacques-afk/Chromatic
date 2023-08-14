@@ -16,5 +16,7 @@ MonoBehaviour:
   - '<speed=50><size=20>LIFE IS<speed=10>...
 
 '
-  - <emotion=shocked><action=shocked><speed=50><size=40>NOT ROBLOX????><pause=1><size=20>................
+  - '<emotion=shocked><action=shocked><speed=50><size=40>NOT ROBLOX????
+
+    <pause=1><size=20>................'
   - <emotion=rejected><speed=20>My whole life is a lie.....<speed=50>
