@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: de3326c32d4b875409adcd99b0b62d0a
+guid: f1361aa1fc6e0f040bbf386715a2f31e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stall1
+    second: {fileID: 2100000, guid: 4604c13153c5d4e4f9547e9db42fd7c6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -37,7 +42,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
