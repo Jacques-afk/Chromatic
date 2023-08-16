@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32ed43a6777800e448948e570d59b244, type: 3}
-  m_Name: DM_QIP_Dialogue
+  m_Name: DialogueTestSecond
   m_EditorClassIdentifier: 
-  dialogueText: []
+  dialogueText:
+  - <speed=50>Life...<pause=1>isn't roblox...

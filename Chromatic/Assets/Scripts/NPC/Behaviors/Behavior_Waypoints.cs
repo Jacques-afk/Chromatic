@@ -24,6 +24,8 @@ public class Behavior_Waypoints : MonoBehaviour
 
     private NPCScript currentNPC;
 
+    public bool canWalk;
+
     private void Start()
     {
         ChooseRandomWaypoint();
@@ -49,47 +51,50 @@ public class Behavior_Waypoints : MonoBehaviour
 
     private void Update()
     {
-        if (!ui.inDialogue)
+        if (canWalk)
         {
-            if (currentNPC.currentQuestState.Equals(QuestState.IN_PROGRESS) || currentNPC.currentQuestState.Equals(QuestState.CAN_FINISH))
+            if (!ui.inDialogue)
             {
-                npcNavMeshAgent.destination = questWait.position;
-            }
-
-            else
-            {
-                if (!reachedDestination)
+                if (currentNPC.currentQuestState.Equals(QuestState.IN_PROGRESS) || currentNPC.currentQuestState.Equals(QuestState.CAN_FINISH))
                 {
-                    npcNavMeshAgent.destination = waypoints[waypointIndex].position;
+                    npcNavMeshAgent.destination = questWait.position;
                 }
 
-                if (npcNavMeshAgent.remainingDistance <= npcNavMeshAgent.stoppingDistance)
+                else
                 {
-                    if (!npcNavMeshAgent.pathPending)
+                    if (!reachedDestination)
                     {
-                        reachedDestination = true;
-                        waypointIndex++;
+                        npcNavMeshAgent.destination = waypoints[waypointIndex].position;
+                    }
 
-                        if (waypointIndex >= waypoints.Length)
+                    if (npcNavMeshAgent.remainingDistance <= npcNavMeshAgent.stoppingDistance)
+                    {
+                        if (!npcNavMeshAgent.pathPending)
                         {
-                            waypointIndex = 0;
+                            reachedDestination = true;
+                            waypointIndex++;
 
-                            //Code to choose random waypoint parent.
-                            ChooseRandomWaypoint();
+                            if (waypointIndex >= waypoints.Length)
+                            {
+                                waypointIndex = 0;
+
+                                //Code to choose random waypoint parent.
+                                ChooseRandomWaypoint();
+                            }
                         }
                     }
-                }
 
-                if (reachedDestination && npcNavMeshAgent.destination != waypoints[waypointIndex].position)
-                {
-                    reachedDestination = false;
+                    if (reachedDestination && npcNavMeshAgent.destination != waypoints[waypointIndex].position)
+                    {
+                        reachedDestination = false;
+                    }
                 }
             }
-        }
-        else
-        {
-            gameObject.GetComponent<NavMeshAgent>().velocity = Vector3.zero;
-            npcNavMeshAgent.destination = transform.position;
+            else
+            {
+                gameObject.GetComponent<NavMeshAgent>().velocity = Vector3.zero;
+                npcNavMeshAgent.destination = transform.position;
+            }
         }
         
     }

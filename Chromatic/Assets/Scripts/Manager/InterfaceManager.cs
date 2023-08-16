@@ -51,6 +51,7 @@ public class InterfaceManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && inDialogue)
         {
             interactBox.SetActive(false);
+
             if (canExit)
             {
                 //Switches back the camera
@@ -67,6 +68,11 @@ public class InterfaceManager : MonoBehaviour
 
                 interactBox.SetActive(true);
                 currentNPC.npcAnimator.SetTrigger("normal");
+
+                if(currentNPC.hasTalked == false)
+                {
+                    currentNPC.hasTalked = true;
+                }
 
 
             }
@@ -185,15 +191,22 @@ public class InterfaceManager : MonoBehaviour
         {
             //Check which state the current quest is in.
             if (currentNPC.currentQuestState.Equals(QuestState.CAN_START)) {
+                //Read Quest Start Dialogue
                 animatedText.ReadText(currentNPC.data.dialogueQuestStart.dialogueText[0]);
             }
             else if (currentNPC.currentQuestState.Equals(QuestState.IN_PROGRESS))
             {
+                //Read Quest In Progress Dialogue
                 animatedText.ReadText(currentNPC.data.dialogueQuestInProgress.dialogueText[0]);
             }
             else if (currentNPC.currentQuestState.Equals(QuestState.CAN_FINISH))
             {
+                //Read Quest End Dialogue
                 animatedText.ReadText(currentNPC.data.dialogueQuestEnded.dialogueText[0]);
+            }
+            else if (currentNPC.hasTalked == true)
+            {
+                animatedText.ReadText(currentNPC.data.dialogueData2.dialogueText[0]);
             }
             else
             {
@@ -276,9 +289,25 @@ public class InterfaceManager : MonoBehaviour
                 canExit = true;
             }
         }
-        else
+        else if (currentNPC.hasTalked == false)
         {
             if (dialogueIndex < currentNPC.data.dialogueData.dialogueText.Count - 1)
+            {
+                dialogueIndex++;
+                nextDialogue = true;
+                currentDialogueEnded = true;
+
+            }
+            else 
+            {
+                nextDialogue = false;
+                canExit = true;
+            }
+        }
+
+        else
+        {
+            if (dialogueIndex < currentNPC.data.dialogueData2.dialogueText.Count - 1)
             {
                 dialogueIndex++;
                 nextDialogue = true;
