@@ -16,13 +16,13 @@ public class VFXcontroller : MonoBehaviour
     public GameObject[] cafe;
     public GameObject[] MChome;
 
-    public GameObject[] petArea2;
+    public GameObject[] parkArea2;
     
 
     void Awake(){
         // petshop = GameObject.FindGameObjectsWithTag("petshop");
-        // cafe = GameObject.FindGameObjectsWithTag("cafe");
-        petArea2 = GameObject.FindGameObjectsWithTag("parkArea2");
+        cafe = GameObject.FindGameObjectsWithTag("cafe");
+        parkArea2 = GameObject.FindGameObjectsWithTag("parkArea2");
     }
 
     void Start()
@@ -56,7 +56,6 @@ public class VFXcontroller : MonoBehaviour
     }
 
 
-
     IEnumerator Cafe_VFX(){
 
         foreach (GameObject obj in cafe){
@@ -71,25 +70,23 @@ public class VFXcontroller : MonoBehaviour
     }
 
     IEnumerator parkArea2_VFX(){
+        yield return new WaitForSeconds(0.001f);
 
-        foreach (GameObject obj in petArea2){
+        foreach (GameObject obj in parkArea2){
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         }
 
-        yield return new WaitForSeconds(1f);
         // flashbang.Play();
         // yield return new WaitForSeconds(0.8f);
         // flashbang.playbackSpeed = 0.9f;
     }
 
-
-
-
     void Update(){
 
         if (Input.GetKeyDown(KeyCode.A)){
             color_parkArea2();
+            color_Cafe();
         }
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - cafe
   - MChouse
   - parkArea2
+  - parkArea1
   layers:
   - Default
   - TransparentFX
