@@ -7,15 +7,22 @@ public class VFXcontroller : MonoBehaviour
 {
     public VisualEffect volcanoeVFX;
     public ParticleSystem flashbang;
+    public GameObject sea;
+    public GameObject pond;
+
     public float volcanoe_Speed = 0.02f;
 
     public GameObject[] petshop;
     public GameObject[] cafe;
+    public GameObject[] MChome;
+
+    public GameObject[] petArea2;
     
 
     void Awake(){
         // petshop = GameObject.FindGameObjectsWithTag("petshop");
-        cafe = GameObject.FindGameObjectsWithTag("cafe");
+        // cafe = GameObject.FindGameObjectsWithTag("cafe");
+        petArea2 = GameObject.FindGameObjectsWithTag("parkArea2");
     }
 
     void Start()
@@ -36,6 +43,19 @@ public class VFXcontroller : MonoBehaviour
         StartCoroutine(Cafe_VFX());
     }
 
+    public void color_Sea(){
+
+    }
+
+    public void color_mcHouse(){
+
+    }
+
+    public void color_parkArea2(){
+        StartCoroutine(parkArea2_VFX());
+    }
+
+
 
     IEnumerator Cafe_VFX(){
 
@@ -50,13 +70,26 @@ public class VFXcontroller : MonoBehaviour
         flashbang.playbackSpeed = 0.9f;
     }
 
+    IEnumerator parkArea2_VFX(){
+
+        foreach (GameObject obj in petArea2){
+            changy colorswap = obj.GetComponent<changy>();
+            colorswap.enabled = true;
+        }
+
+        yield return new WaitForSeconds(1f);
+        // flashbang.Play();
+        // yield return new WaitForSeconds(0.8f);
+        // flashbang.playbackSpeed = 0.9f;
+    }
+
 
 
 
     void Update(){
 
         if (Input.GetKeyDown(KeyCode.A)){
-            color_Cafe();
+            color_parkArea2();
         }
     }
 }
