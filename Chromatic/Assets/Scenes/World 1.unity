@@ -10799,6 +10799,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2147603201568206416, guid: aae5fb6f36f65854c87f1a90e9454957,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a8a0c54c2b8b3f458b4b7dab2b9c155, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae5fb6f36f65854c87f1a90e9454957, type: 3}
 --- !u!1001 &444214007
@@ -12032,6 +12037,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volcanoeVFX: {fileID: 1043321651}
   volcanoe_Speed: 0.07
+  petshop: []
+  cafe: []
 --- !u!43 &556362867
 Mesh:
   m_ObjectHideFlags: 0
@@ -36316,12 +36323,12 @@ PrefabInstance:
     - target: {fileID: 904927092887355474, guid: 1d3d4a5f7bef98e478f675bf2b334f11,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000008481285
+      value: 0.000000008481287
       objectReference: {fileID: 0}
     - target: {fileID: 904927092887355474, guid: 1d3d4a5f7bef98e478f675bf2b334f11,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000014431528
+      value: -0.0000000014431532
       objectReference: {fileID: 0}
     - target: {fileID: 2782879396554975769, guid: 1d3d4a5f7bef98e478f675bf2b334f11,
         type: 3}
@@ -36521,7 +36528,7 @@ PrefabInstance:
     - target: {fileID: 5243611154905412039, guid: 1d3d4a5f7bef98e478f675bf2b334f11,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1e-45
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 5243611154905412039, guid: 1d3d4a5f7bef98e478f675bf2b334f11,
         type: 3}
