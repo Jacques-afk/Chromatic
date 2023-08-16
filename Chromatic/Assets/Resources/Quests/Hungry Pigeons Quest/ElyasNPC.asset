@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633ab9248efaf844d84872748d948fd3, type: 3}
   m_Name: ElyasNPC
   m_EditorClassIdentifier: 
-  npcName: 
-  dialogueData: {fileID: 0}
-  npcQuest: {fileID: 0}
-  startPoint: 0
-  endPoint: 0
-  dialogueQuestStart: {fileID: 0}
-  dialogueQuestInProgress: {fileID: 0}
-  dialogueQuestEnded: {fileID: 0}
+  npcName: Elyas
+  dialogueData: {fileID: 11400000, guid: 878a0069506902b42890610b5334c922, type: 2}
+  dialogueData2: {fileID: 11400000, guid: 3ba3d5801e47168429cd82f1db1ddffd, type: 2}
+  npcQuest: {fileID: 11400000, guid: 687df7fa90ec8ed4b9abc89fb702c658, type: 2}
+  startPoint: 1
+  endPoint: 1
+  dialogueQuestStart: {fileID: 11400000, guid: 9cedbc3e927bce145a75875108e97a83, type: 2}
+  dialogueQuestInProgress: {fileID: 11400000, guid: 503d24464081f1b40b151b6d7323df63,
+    type: 2}
+  dialogueQuestEnded: {fileID: 11400000, guid: 9e6ea41b3254fbc4a90f78530afc2733, type: 2}

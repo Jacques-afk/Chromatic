@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Delivery Man
   dialogueData: {fileID: 11400000, guid: 359bdab719c8aa04ca3d289ec997636e, type: 2}
-  npcQuest: {fileID: 0}
+  dialogueData2: {fileID: 11400000, guid: 2c87462d26898f144b2ab007fb873e31, type: 2}
+  npcQuest: {fileID: 11400000, guid: 25f93e4b3310c6b46a9dc501aa6aba52, type: 2}
   startPoint: 0
   endPoint: 0
   dialogueQuestStart: {fileID: 11400000, guid: e581e737ff6742b40aea136fb767811b, type: 2}

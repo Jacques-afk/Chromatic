@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DM_DialogueData
   m_EditorClassIdentifier: 
   dialogueText:
-  - <speed=50>Im late for our other deliveries...<pause=1>but Enrico's coffee is
-    better!!
+  - <speed=50>Hey! Do you know where the local cafe is?
+  - <speed=50>I seem to be... lost.

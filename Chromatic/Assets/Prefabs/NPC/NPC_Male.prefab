@@ -32,6 +32,37 @@ Transform:
   m_Father: {fileID: 1682000393471878714}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &378108224097785468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2945933264066330340}
+  m_Layer: 0
+  m_Name: RaycastSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2945933264066330340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378108224097785468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 564539209427731900}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &417294421724670996
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,6 +946,7 @@ GameObject:
   - component: {fileID: 564539209427731902}
   - component: {fileID: 564539209427731841}
   - component: {fileID: 564539209427731840}
+  - component: {fileID: 4384341975693405356}
   m_Layer: 0
   m_Name: NPCBody
   m_TagString: NPC
@@ -936,6 +968,7 @@ Transform:
   m_Children:
   - {fileID: 564539208319350289}
   - {fileID: 26771003929692601}
+  - {fileID: 2945933264066330340}
   m_Father: {fileID: 564539207435524606}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1113,6 +1146,25 @@ CapsuleCollider:
   m_Height: 1.9999999
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4384341975693405356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564539209427731894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1664c292aa60d478c6d921617e379a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkingSpeed: 3.5
+  runningSpeed: 6.5
+  playerTransform: {fileID: 0}
+  allowedDistance: 4
+  raycastSource: {fileID: 2945933264066330340}
+  raycastRange: 4
+  canFollow: 0
 --- !u!1 &573417829511340203
 GameObject:
   m_ObjectHideFlags: 0
