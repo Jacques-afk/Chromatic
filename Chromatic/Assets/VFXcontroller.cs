@@ -12,8 +12,8 @@ public class VFXcontroller : MonoBehaviour
     public GameObject[] cafe;
 
     void Awake(){
-        petshop = GameObject.FindGameObjectsWithTag("petshop");
-        // cafe = GameObject.FindGameObjectsWithTag("cafe");
+        // petshop = GameObject.FindGameObjectsWithTag("petshop");
+        cafe = GameObject.FindGameObjectsWithTag("cafe");
     }
 
 
@@ -26,7 +26,8 @@ public class VFXcontroller : MonoBehaviour
 
     IEnumerator demonstrate(){
         yield return new WaitForSeconds(5f);
-        color_Petshop();
+        // color_Petshop();
+        color_Cafe();
     }
 
     // IEnumerator volcanoe(){
