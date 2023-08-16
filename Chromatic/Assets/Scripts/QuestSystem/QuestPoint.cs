@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Collider))]
 public class QuestPoint : MonoBehaviour
@@ -31,6 +32,14 @@ public class QuestPoint : MonoBehaviour
         //GameEventsManager.instance.inputEvents // Subscribes to the OnSubmitPressed event.
     }
 
+    /// <summary>
+    /// Unsubscribes to the event on quest state change, once quest is completed.
+    /// </summary>
+    private void OnDisable()
+    {
+        GameEventsManager.instance.questEvents.onQuestStateChange -= QuestStateChange;
+    }
+
     //Change to When Dialogue as ended.
     private void OnSubmitPressed()
     {
@@ -51,13 +60,7 @@ public class QuestPoint : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Unsubscribes to the event on quest state change, once quest is completed.
-    /// </summary>
-    private void OnDisable()
-    {
-        GameEventsManager.instance.questEvents.onQuestStateChange -= QuestStateChange;
-    }
+    
 
     /// <summary>
     /// 

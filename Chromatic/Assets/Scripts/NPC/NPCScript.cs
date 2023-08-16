@@ -55,6 +55,9 @@ public class NPCScript : MonoBehaviour
     private Vector3 npcVelocity;
     private float npcMovementThreshold = 0.1f;
 
+    [HideInInspector]
+    public bool hasTalked = false;
+
 
     private void Awake()
     {
@@ -93,7 +96,6 @@ public class NPCScript : MonoBehaviour
     /// <param name="quest"></param>
     private void QuestStateChange(Quest quest)
     {
-        Debug.Log(quest + "run!");
         //Checks to see if the Quest ID matches the current quest, get the current quest state.
         if (quest.questInfo.id.Equals(questID))
         {

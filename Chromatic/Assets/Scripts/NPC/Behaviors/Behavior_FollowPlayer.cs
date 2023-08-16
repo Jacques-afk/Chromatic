@@ -8,18 +8,21 @@ public class Behavior_FollowPlayer : MonoBehaviour
     public float walkingSpeed = 3.5f;
     public float runningSpeed = 6.5f;
     private NavMeshAgent npcNavMeshAgent;
-    public Transform playerTransform;
+    private Transform playerTransform;
     public float allowedDistance;
     public Transform raycastSource;
     public float raycastRange;
     public bool canFollow = true;
     private float pathLength;
     private InterfaceManager ui;
+    private GameObject player;
 
     private void Start()
     {
         npcNavMeshAgent = GetComponent<NavMeshAgent>();
         ui = InterfaceManager.instance;
+        player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     private void Update()
@@ -28,6 +31,7 @@ public class Behavior_FollowPlayer : MonoBehaviour
         {
             if (canFollow)
             {
+                playerTransform = player.transform;
                 npcNavMeshAgent.destination = playerTransform.position;
 
                 float debugDuration = 2.0f;
@@ -71,8 +75,6 @@ public class Behavior_FollowPlayer : MonoBehaviour
             {
                 pathLength += Vector3.Distance(path.corners[i], path.corners[i + 1]);
             }
-
-            Debug.Log("Path length: " + pathLength);
         }
     }
 }

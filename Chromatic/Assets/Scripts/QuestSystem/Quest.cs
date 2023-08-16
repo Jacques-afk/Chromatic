@@ -37,6 +37,7 @@ public class Quest
             QuestStep questStep = Object.Instantiate<GameObject>(questStepPrefab, parentTransform)
                 .GetComponent<QuestStep>();
             questStep.InitializeQuestStep(questInfo.id);
+            //questStep.transform.position = parentTransform.position;
         }
     }
 

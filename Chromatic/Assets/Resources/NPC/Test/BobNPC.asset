@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Bob
   dialogueData: {fileID: 11400000, guid: 1d3476a61bfdffe4cb5974a9fa988804, type: 2}
+  dialogueData2: {fileID: 11400000, guid: fad081a6d5460a3409391174c8f32f68, type: 2}
   npcQuest: {fileID: 11400000, guid: 25f93e4b3310c6b46a9dc501aa6aba52, type: 2}
   startPoint: 0
   endPoint: 0
