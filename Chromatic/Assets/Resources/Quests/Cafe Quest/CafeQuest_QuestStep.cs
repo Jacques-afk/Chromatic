@@ -7,7 +7,7 @@ public class CafeQuest_QuestStep : QuestStep
     // Quest Step
 
     private Spawner spawner;
-    private DeliveryManManager dmManager;
+    private NPCQuestManager npcManager;
 
     private void Awake()
     {
@@ -32,8 +32,8 @@ public class CafeQuest_QuestStep : QuestStep
         //If object entered collider, and has player tag. finish the quest step.
         if (other.CompareTag("Player"))
         {
-            dmManager = DeliveryManManager.instance;
-            dmManager.npcFollow.canFollow = true;
+            npcManager = NPCQuestManager.instance;
+            npcManager.npcFollow.canFollow = true;
             FinishQuestStep();
         }
     }

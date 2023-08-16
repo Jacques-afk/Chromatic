@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class CafeQuestQuestStep2 : QuestStep
 {
-    private DeliveryManManager dmManger;
+    private NPCQuestManager npcManager;
 
     private void Awake()
     {
-        dmManger = DeliveryManManager.instance;
+        npcManager = NPCQuestManager.instance;
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            
-            dmManger.npcFollow.canFollow = false;
+
+            npcManager.npcFollow.canFollow = false;
+            npcManager.DestroyNPC();
             FinishQuestStep();
         }
     }
