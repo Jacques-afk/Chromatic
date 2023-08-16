@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: McHouse1
-    second: {fileID: 2100000, guid: 0b829fb5467d7c743b8c2c0f7fe6e7f4, type: 2}
+    second: {fileID: 2100000, guid: 13e1ab3be1fa45544b043f2a36e7fa4a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

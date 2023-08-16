@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fdbdb27ad5fb6814ea85db1285a8baa2
+guid: 7b4d5fb14ba1c6c4caba6c553a4d769e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: McHouse1
-    second: {fileID: 2100000, guid: 13e1ab3be1fa45544b043f2a36e7fa4a, type: 2}
+    second: {fileID: 2100000, guid: d4e3414736a33884a935adb9a82d4d8f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -47,7 +47,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
