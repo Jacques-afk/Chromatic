@@ -11,6 +11,7 @@ TagManager:
   - petshop
   - cafe
   - MChouse
+  - parkArea2
   layers:
   - Default
   - TransparentFX
