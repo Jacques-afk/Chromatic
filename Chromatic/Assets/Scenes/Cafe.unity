@@ -5236,9 +5236,10 @@ GameObject:
   - component: {fileID: 447524191}
   - component: {fileID: 447524190}
   - component: {fileID: 447524189}
+  - component: {fileID: 447524192}
   m_Layer: 0
   m_Name: barrier_gs
-  m_TagString: Untagged
+  m_TagString: cafe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5321,6 +5322,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447524187}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &447524192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447524187}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b888e8fdc4556949aab24ec6aee81ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 0}
+  material: {fileID: 0}
 --- !u!1 &454196461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 176673811444659927, guid: cd2cc6a1f0352244d9913c5631e817ce,
@@ -14258,7 +14273,7 @@ GameObject:
   - component: {fileID: 1408794483}
   m_Layer: 0
   m_Name: barrier_gs
-  m_TagString: petshop
+  m_TagString: cafe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16685,9 +16700,10 @@ GameObject:
   - component: {fileID: 1636497465}
   - component: {fileID: 1636497464}
   - component: {fileID: 1636497463}
+  - component: {fileID: 1636497466}
   m_Layer: 0
   m_Name: barrier_gs
-  m_TagString: Untagged
+  m_TagString: cafe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16770,6 +16786,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636497461}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1636497466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636497461}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b888e8fdc4556949aab24ec6aee81ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 0}
+  material: {fileID: 0}
 --- !u!1001 &1643561700
 PrefabInstance:
   m_ObjectHideFlags: 0
