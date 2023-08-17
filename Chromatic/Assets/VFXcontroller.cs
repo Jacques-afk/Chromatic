@@ -17,8 +17,12 @@ public class VFXcontroller : MonoBehaviour
     public GameObject[] MChome;
 
     public GameObject[] parkArea2;
-    
 
+    public Material grass_TA1;
+    public Material grass_TA2;
+    public Material grass_TA3;
+    public Material grass_TA4;
+    
     void Awake(){
         // petshop = GameObject.FindGameObjectsWithTag("petshop");
         cafe = GameObject.FindGameObjectsWithTag("cafe");
@@ -39,6 +43,12 @@ public class VFXcontroller : MonoBehaviour
     //     StartCoroutine(Petshop_VFX());
     // }
 
+
+
+  
+
+
+
     public void color_Cafe(){
         StartCoroutine(Cafe_VFX());
     }
@@ -56,6 +66,9 @@ public class VFXcontroller : MonoBehaviour
     }
 
 
+
+
+
     IEnumerator Cafe_VFX(){
 
         foreach (GameObject obj in cafe){
@@ -69,24 +82,34 @@ public class VFXcontroller : MonoBehaviour
         flashbang.playbackSpeed = 0.9f;
     }
 
+
+
     IEnumerator parkArea2_VFX(){
         yield return new WaitForSeconds(0.001f);
 
-        foreach (GameObject obj in parkArea2){
-            changy colorswap = obj.GetComponent<changy>();
-            colorswap.enabled = true;
-        }
+        // foreach (GameObject obj in parkArea2){
+        //     changy colorswap = obj.GetComponent<changy>();
+        //     colorswap.enabled = true;
+        // }
+
+        yield return new WaitForSeconds(1f);
+        // grass_TA2.
+        
+        grass_TA2.SetColor("_GrassColor", Color.white);
 
         // flashbang.Play();
         // yield return new WaitForSeconds(0.8f);
         // flashbang.playbackSpeed = 0.9f;
     }
 
+
+
     void Update(){
 
         if (Input.GetKeyDown(KeyCode.A)){
+
             color_parkArea2();
-            color_Cafe();
+            // color_Cafe();
         }
     }
 }
