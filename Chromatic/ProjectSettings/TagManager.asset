@@ -14,6 +14,7 @@ TagManager:
   - parkArea2
   - parkArea1
   - townArea2
+  - townArea1
   layers:
   - Default
   - TransparentFX

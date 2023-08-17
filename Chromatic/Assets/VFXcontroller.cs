@@ -16,6 +16,9 @@ public class VFXcontroller : MonoBehaviour
     public GameObject[] cafe;
     public GameObject[] MChome;
 
+    public GameObject[] townArea1;
+    public GameObject[] townArea2;
+
     public GameObject[] parkArea2;
 
     public Material grass_TA1;
@@ -24,30 +27,33 @@ public class VFXcontroller : MonoBehaviour
     public Material grass_TA4;
     
     void Awake(){
-        // petshop = GameObject.FindGameObjectsWithTag("petshop");
+        petshop = GameObject.FindGameObjectsWithTag("petshop");
         cafe = GameObject.FindGameObjectsWithTag("cafe");
+
+        townArea1 = GameObject.FindGameObjectsWithTag("townArea1");
         parkArea2 = GameObject.FindGameObjectsWithTag("parkArea2");
     }
 
-    void Start()
-    {
-        // StartCoroutine(volcanoe());
-    }
+    // void Start()
+    // {
+    //     StartCoroutine(volcanoe());
+    // }
 
     // IEnumerator volcanoe(){
     //     yield return new WaitForSeconds(1.5f);
     //     volcanoeVFX.playRate = volcanoe_Speed;
     // }
 
+
+
+
+
+
+
+
     // public void color_Petshop(){
     //     StartCoroutine(Petshop_VFX());
     // }
-
-
-
-  
-
-
 
     public void color_Cafe(){
         StartCoroutine(Cafe_VFX());
@@ -61,12 +67,27 @@ public class VFXcontroller : MonoBehaviour
 
     }
 
+
+
+
+
+    public void color_townArea1(){
+        StartCoroutine(townArea1_VFX());
+    }
+
     public void color_parkArea2(){
         StartCoroutine(parkArea2_VFX());
     }
 
 
+    IEnumerator townArea1_VFX(){
 
+        foreach (GameObject obj in townArea1){
+            changy colorswap = obj.GetComponent<changy>();
+            colorswap.enabled = true;
+        } 
+        yield return null;
+    }
 
 
     IEnumerator Cafe_VFX(){
@@ -81,6 +102,9 @@ public class VFXcontroller : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         flashbang.playbackSpeed = 0.9f;
     }
+
+
+
 
 
 
@@ -107,9 +131,7 @@ public class VFXcontroller : MonoBehaviour
     void Update(){
 
         if (Input.GetKeyDown(KeyCode.A)){
-
-            color_parkArea2();
-            // color_Cafe();
+            color_townArea1();  
         }
     }
 }
