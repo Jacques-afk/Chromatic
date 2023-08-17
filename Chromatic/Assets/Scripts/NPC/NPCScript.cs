@@ -58,9 +58,12 @@ public class NPCScript : MonoBehaviour
     [HideInInspector]
     public bool hasTalked = false;
 
+    public OutlineMaterialManager outlineMaterialManager;
+
 
     private void Awake()
     {
+        outlineMaterialManager = GetComponent<OutlineMaterialManager>();
 
         //Check if NPC has quest
         if (data.npcQuest.id != "EmptyScript")

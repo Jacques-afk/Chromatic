@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 moveDirection;
 
+    private bool isPaused = false;
 
     [HideInInspector]
     [Header("Animation")]
@@ -254,6 +255,20 @@ public class PlayerMovement : MonoBehaviour
             isSprint = !isSprint;
         }
         
+    }
+
+    void OnPause()
+    {
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            ui.ClosePauseMenu();
+        }
+        else
+        {
+            ui.OpenPauseMenu();
+        }
     }
 
     #endregion

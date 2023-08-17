@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableTest : MonoBehaviour, IInteractable
+public class InteractableTest : MonoBehaviour
 {
     /// <summary>
     /// Called when player interacts with object.

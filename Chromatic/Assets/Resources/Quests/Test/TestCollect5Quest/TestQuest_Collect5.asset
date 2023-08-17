@@ -16,3 +16,5 @@ MonoBehaviour:
   displayName: Test Quest
   questPrerequisite: []
   questStepsPrefabs: []
+  questDescription: 
+  questGiver: 

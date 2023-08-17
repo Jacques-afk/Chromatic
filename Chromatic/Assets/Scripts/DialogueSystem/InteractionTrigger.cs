@@ -17,6 +17,8 @@ public class InteractionTrigger : MonoBehaviour
     /// </summary>
     private NPCScript currentNpc;
 
+    private InteractableScript currentInteractable;
+
     /// <summary>
     /// Reference to the Cinemachine TargetGroup
     /// </summary>
@@ -27,6 +29,12 @@ public class InteractionTrigger : MonoBehaviour
     private Transform selfTransform;
 
     private PlayerMovement player;
+
+    private Collider currentCollided;
+
+    private DoorScript doorRef;
+
+    private OutlineMaterialManager outlineMaterialManager;
     /// <summary>
     /// Called when the game starts, stores reference to the interface manager's instance
     /// </summary>
@@ -45,6 +53,8 @@ public class InteractionTrigger : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
+        currentCollided = other;
+
         ui.interactBoxAnimator.SetBool("canInteract", true);
         if (other.CompareTag("NPC"))
         {
@@ -52,12 +62,22 @@ public class InteractionTrigger : MonoBehaviour
             npcName = currentNpc.data.npcName;
             ui.interactBoxText.text = "Talk to " + npcName;
             ui.currentNPC = currentNpc;
+            outlineMaterialManager = other.GetComponent<OutlineMaterialManager>();
+            outlineMaterialManager.AddMaterialToAll();
         }
 
         else if (other.CompareTag("Interactable"))
         {
             ui.interactBoxAnimator.SetBool("canInteract", true);
             ui.interactBoxText.text = "'E' to interact!";
+            outlineMaterialManager = other.GetComponent<OutlineMaterialManager>();
+            outlineMaterialManager.AddMaterialToAll();
+            
+        }
+        else if (other.CompareTag("Door"))
+        {
+            ui.interactBoxAnimator.SetBool("canInteract", true);
+            ui.interactBoxText.text = "'E' to Open Door!";
         }
         else
         {
@@ -72,9 +92,21 @@ public class InteractionTrigger : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
+        currentCollided = null;
         ui.interactBoxAnimator.SetBool("canInteract", false);
-        currentNpc = null;
-        ui.currentNPC = currentNpc;
+        if (other.CompareTag("NPC"))
+        {
+            currentNpc = null;
+            ui.currentNPC = currentNpc;
+            outlineMaterialManager.RemoveMaterialFromAll();
+            outlineMaterialManager = null;
+        }
+        else if (other.CompareTag("Interactable"))
+        {
+            outlineMaterialManager.RemoveMaterialFromAll();
+            outlineMaterialManager = null;
+        }
+        
     }
 
     /// <summary>
@@ -85,6 +117,8 @@ public class InteractionTrigger : MonoBehaviour
     {
         if (!ui.inDialogue && currentNpc != null)
         {
+            outlineMaterialManager.RemoveMaterialFromAll();
+            ui.GetDialogueDataNPC();
             selfTransform = transform;
             ui.TurnToPlayer(selfTransform);
             targetGroup.m_Targets[1].target = currentNpc.transform;
@@ -98,8 +132,20 @@ public class InteractionTrigger : MonoBehaviour
             ui.currentDialogueEnded = false;
             player.isSprint = false;
             player.isWalk = false;
+            player.animator.SetTrigger("Normal");
+        }
+        if(currentCollided != null)
+        {
+            if (currentCollided.CompareTag("Door"))
+            {
+                ui.FadeBlack();
+                doorRef = currentCollided.GetComponent<DoorScript>();
+                currentCollided = null;
+                doorRef.StartDoorTimer();
+                doorRef = null;
 
-
+                
+            }
         }
     }
 }

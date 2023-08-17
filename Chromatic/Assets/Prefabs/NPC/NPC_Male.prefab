@@ -947,6 +947,7 @@ GameObject:
   - component: {fileID: 564539209427731841}
   - component: {fileID: 564539209427731840}
   - component: {fileID: 4384341975693405356}
+  - component: {fileID: 1882999108624821010}
   m_Layer: 0
   m_Name: NPCBody
   m_TagString: NPC
@@ -1042,6 +1043,8 @@ MonoBehaviour:
   isHappy: 0
   npcAnimator: {fileID: 564539209427731841}
   navMeshAgent: {fileID: 0}
+  hasTalked: 0
+  outlineMaterialManager: {fileID: 0}
 --- !u!114 &564539209427731897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,6 +1092,7 @@ MonoBehaviour:
   - {fileID: 564539207624039538}
   - {fileID: 564539207376559854}
   questWait: {fileID: 564539208236147241}
+  canWalk: 0
 --- !u!195 &564539209427731902
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1160,11 +1164,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingSpeed: 3.5
   runningSpeed: 6.5
-  playerTransform: {fileID: 0}
   allowedDistance: 4
   raycastSource: {fileID: 2945933264066330340}
   raycastRange: 4
   canFollow: 0
+--- !u!114 &1882999108624821010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564539209427731894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685a7c8b384cf3a44af8e54ad6037dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialToAdd: {fileID: 2100000, guid: 14592cadf08f85746ba39cfd9af39c99, type: 2}
+  targetObjects:
+  - {fileID: 5199666149360512825}
 --- !u!1 &573417829511340203
 GameObject:
   m_ObjectHideFlags: 0

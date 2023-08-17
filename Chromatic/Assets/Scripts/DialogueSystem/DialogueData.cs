@@ -13,4 +13,6 @@ public class DialogueData : ScriptableObject
     /// </summary>
     [TextArea(4, 4)]
     public List<string> dialogueText;
+
+    public bool playerMonologue;
 }

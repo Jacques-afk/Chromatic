@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,15 +13,19 @@ public class InterfaceManager : MonoBehaviour
 
     public CanvasGroup canvasGroupDialogue;
     public TMP_Animated animatedText;
+    public GameObject namePlate;
     public Image nameBubble;
     public TextMeshProUGUI nameTMP;
     public GameObject dialogueArrow;
     public GameObject interactBox;
     public Animator interactBoxAnimator;
     public TextMeshProUGUI interactBoxText;
+    public Animator blackBoxAnimator;
+    public GameObject pauseMenu;
 
     [HideInInspector]
     public NPCScript currentNPC;
+    private bool npcHasQuest;
 
     private int dialogueIndex;
     public bool canExit;
@@ -31,6 +36,19 @@ public class InterfaceManager : MonoBehaviour
     public GameObject gameCamera;
     public GameObject dialogueCamera;
 
+    private DialogueData dialogue;
+    private bool isDialogueMonologue = false;
+
+    private AudioManager audioManager;
+
+
+    [Header("Quest Log Variables")]
+    public TextMeshProUGUI questName;
+    public TextMeshProUGUI questDescription;
+    public TextMeshProUGUI questGiver;
+    public Button questButtonPrefab;
+    public Transform questButtonParentTransform;
+    public List<Quest> questList;
 
     //Testing
     public UnityEventsTest eventsTest;
@@ -42,12 +60,18 @@ public class InterfaceManager : MonoBehaviour
 
     private void Start()
     {
+        audioManager = AudioManager.instance;
         animatedText.onDialogueEnd.AddListener(() => EndDialogue());
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
 
     private void Update()
     {
+        if (Input.GetKeyUp(KeyCode.O))
+        {
+            CreateQuestButton();
+        }
         if (Input.GetKeyDown(KeyCode.E) && inDialogue)
         {
             interactBox.SetActive(false);
@@ -60,21 +84,29 @@ public class InterfaceManager : MonoBehaviour
                 StartCoroutine(FadeUIRoutine(false, 0.2f));
                 StartCoroutine(ResetStateAfterDelay(0.8f));
                 Debug.Log("Dialogue Exited.");
+                audioManager.PlaySound(audioManager.dialogueButton);
 
-                if (currentNPC.hasQuest == true)
+                if (npcHasQuest == true)
                 {
                     StartorEndQuest();
                 }
+                
 
                 interactBox.SetActive(true);
-                currentNPC.npcAnimator.SetTrigger("normal");
-
-                if(currentNPC.hasTalked == false)
+                if (!isDialogueMonologue)
                 {
-                    currentNPC.hasTalked = true;
+                    currentNPC.npcAnimator.SetTrigger("normal");
+
+                    if (currentNPC.hasTalked == false)
+                    {
+                        currentNPC.hasTalked = true;
+                    }
+
+                    currentNPC.outlineMaterialManager.AddMaterialToAll();
                 }
 
-
+                isDialogueMonologue = false;
+                npcHasQuest = false;
             }
 
             else if (nextDialogue)
@@ -82,29 +114,9 @@ public class InterfaceManager : MonoBehaviour
                 //TODO - Make sure that text has ended first.
                 if (currentDialogueEnded)
                 {
+                    audioManager.PlaySound(audioManager.dialogueButton);
                     dialogueArrow.SetActive(false);
-                    //Check which state the current quest is in.
-                    if (currentNPC.currentQuestState.Equals(QuestState.CAN_START))
-                    {
-                        animatedText.ReadText(currentNPC.data.dialogueQuestStart.dialogueText[dialogueIndex]);
-                        currentDialogueEnded = false;
-                    }
-                    else if (currentNPC.currentQuestState.Equals(QuestState.IN_PROGRESS))
-                    {
-                        animatedText.ReadText(currentNPC.data.dialogueQuestInProgress.dialogueText[dialogueIndex]);
-                        currentDialogueEnded = false;
-                    }
-                    else if (currentNPC.currentQuestState.Equals(QuestState.CAN_FINISH))
-                    {
-                        animatedText.ReadText(currentNPC.data.dialogueQuestEnded.dialogueText[dialogueIndex]);
-                        currentDialogueEnded = false;
-                    }
-                    else
-                    {
-                        animatedText.ReadText(currentNPC.data.dialogueData.dialogueText[dialogueIndex]);
-                        currentDialogueEnded = false;
-                    }
-
+                    animatedText.ReadText(dialogue.dialogueText[dialogueIndex]);
                     currentDialogueEnded = false;
                     Debug.Log("Next Dialogue initiated");
 
@@ -126,7 +138,9 @@ public class InterfaceManager : MonoBehaviour
         if (currentNPC.currentQuestState.Equals(QuestState.CAN_START) && currentNPC.data.startPoint)
         {
             GameEventsManager.instance.questEvents.StartQuest(currentNPC.questID);
-            Debug.Log(currentNPC.data.npcQuest.displayName + "Has started");
+
+            CreateQuestButton();
+
         }
         else if (currentNPC.currentQuestState.Equals(QuestState.CAN_FINISH) && currentNPC.data.endPoint)
         {
@@ -189,29 +203,11 @@ public class InterfaceManager : MonoBehaviour
 
         if (show)
         {
-            //Check which state the current quest is in.
-            if (currentNPC.currentQuestState.Equals(QuestState.CAN_START)) {
-                //Read Quest Start Dialogue
-                animatedText.ReadText(currentNPC.data.dialogueQuestStart.dialogueText[0]);
-            }
-            else if (currentNPC.currentQuestState.Equals(QuestState.IN_PROGRESS))
+            if (!isDialogueMonologue)
             {
-                //Read Quest In Progress Dialogue
-                animatedText.ReadText(currentNPC.data.dialogueQuestInProgress.dialogueText[0]);
+                namePlate.SetActive(true);
             }
-            else if (currentNPC.currentQuestState.Equals(QuestState.CAN_FINISH))
-            {
-                //Read Quest End Dialogue
-                animatedText.ReadText(currentNPC.data.dialogueQuestEnded.dialogueText[0]);
-            }
-            else if (currentNPC.hasTalked == true)
-            {
-                animatedText.ReadText(currentNPC.data.dialogueData2.dialogueText[0]);
-            }
-            else
-            {
-                animatedText.ReadText(currentNPC.data.dialogueData.dialogueText[0]);
-            }
+            animatedText.ReadText(dialogue.dialogueText[0]);
 
         }
     }
@@ -243,83 +239,21 @@ public class InterfaceManager : MonoBehaviour
     public void EndDialogue()
     {
         dialogueArrow.SetActive(true);
-        //Check which state the current quest is in.
-        if (currentNPC.currentQuestState.Equals(QuestState.CAN_START))
+        if (dialogueIndex < dialogue.dialogueText.Count -1)
         {
-            if (dialogueIndex < currentNPC.data.dialogueQuestStart.dialogueText.Count - 1)
-            {
-                dialogueIndex++;
-                nextDialogue = true;
-                currentDialogueEnded = true;
+            dialogueIndex++;
+            nextDialogue = true;
+            currentDialogueEnded = true;
 
-            }
-            else
-            {
-                nextDialogue = false;
-                canExit = true;
-            }
         }
-        else if (currentNPC.currentQuestState.Equals(QuestState.IN_PROGRESS))
-        {
-            if (dialogueIndex < currentNPC.data.dialogueQuestInProgress.dialogueText.Count - 1)
-            {
-                dialogueIndex++;
-                nextDialogue = true;
-                currentDialogueEnded = true;
-
-            }
-            else
-            {
-                nextDialogue = false;
-                canExit = true;
-            }
-        }
-        else if (currentNPC.currentQuestState.Equals(QuestState.CAN_FINISH))
-        {
-            if (dialogueIndex < currentNPC.data.dialogueQuestEnded.dialogueText.Count - 1)
-            {
-                dialogueIndex++;
-                nextDialogue = true;
-                currentDialogueEnded = true;
-
-            }
-            else
-            {
-                nextDialogue = false;
-                canExit = true;
-            }
-        }
-        else if (currentNPC.hasTalked == false)
-        {
-            if (dialogueIndex < currentNPC.data.dialogueData.dialogueText.Count - 1)
-            {
-                dialogueIndex++;
-                nextDialogue = true;
-                currentDialogueEnded = true;
-
-            }
-            else 
-            {
-                nextDialogue = false;
-                canExit = true;
-            }
-        }
-
         else
         {
-            if (dialogueIndex < currentNPC.data.dialogueData2.dialogueText.Count - 1)
-            {
-                dialogueIndex++;
-                nextDialogue = true;
-                currentDialogueEnded = true;
-
-            }
-            else
-            {
-                nextDialogue = false;
-                canExit = true;
-            }
+            nextDialogue = false;
+            canExit = true;
         }
+
+        
+       
 
     }
 
@@ -328,5 +262,88 @@ public class InterfaceManager : MonoBehaviour
         Vector3 directionToTarget = targetTransform.position - currentNPC.transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
         currentNPC.transform.rotation = targetRotation;
+    }
+
+    public void HideNamePlate()
+    {
+        namePlate.SetActive(false);
+    }
+
+    public void GetDialogueDataPlayer(DialogueData x)
+    {
+        dialogue = x;
+        isDialogueMonologue = true;
+    }
+
+    public void GetDialogueDataNPC()
+    {
+        if (currentNPC.currentQuestState.Equals(QuestState.CAN_START))
+        {
+            dialogue = currentNPC.data.dialogueQuestStart;
+        }
+        else if (currentNPC.currentQuestState.Equals(QuestState.IN_PROGRESS))
+        {
+            dialogue = currentNPC.data.dialogueQuestInProgress;
+        }
+        else if (currentNPC.currentQuestState.Equals(QuestState.CAN_FINISH))
+        {
+            dialogue = currentNPC.data.dialogueQuestEnded;
+        }
+        else if (currentNPC.hasTalked == true)
+        {
+            dialogue = currentNPC.data.dialogueData2;
+        }
+        else
+        {
+            dialogue = currentNPC.data.dialogueData;
+        }
+
+        npcHasQuest = currentNPC.hasQuest;
+    }
+
+    public void FadeBlack()
+    {
+        blackBoxAnimator.SetBool("canFadeIn", true);
+        StartCoroutine(FadeOut());
+        
+    }
+
+    IEnumerator FadeOut()
+    {
+        yield return new WaitForSeconds(1.5f);
+        blackBoxAnimator.SetBool("canFadeIn", false);
+        blackBoxAnimator.SetBool("canFadeOut", true);
+        yield return new WaitForSeconds(0.1f);
+        blackBoxAnimator.SetBool("canFadeOut", false);
+
+    }
+
+    public void OpenPauseMenu()
+    {
+        Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+    public void ClosePauseMenu()
+    {
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void CreateQuestButton()
+    {
+        Button newQuestButton = Instantiate(questButtonPrefab, questButtonParentTransform);
+        QuestLogButton questLogButton = newQuestButton.GetComponent<QuestLogButton>();
+        questLogButton.npc = currentNPC;
+        questLogButton.InitializeButton();
+
+        
+    }
+   public void ClearQuestLogButton()
+    {
+        questDescription.text = "";
+        questName.text = "";
+        questGiver.text = "";
     }
 }

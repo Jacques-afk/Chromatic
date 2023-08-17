@@ -16,3 +16,5 @@ MonoBehaviour:
   displayName: EMPTY
   questPrerequisite: []
   questStepsPrefabs: []
+  questDescription: 
+  questGiver: 

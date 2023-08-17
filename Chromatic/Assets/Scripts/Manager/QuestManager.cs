@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-    private Dictionary<string, Quest> questMap;
+    public Dictionary<string, Quest> questMap;
 
     private void Awake()
     {
@@ -38,7 +38,6 @@ public class QuestManager : MonoBehaviour
             //if the quest meets the requirements
             if(quest.questStateInfo == QuestState.REQUIREMENTS_NOT_MET && CheckRequirementsMet(quest))
             {
-                Debug.Log("ran");
                 //Change the quest state to can start.
                 ChangeQuestState(quest.questInfo.id, QuestState.CAN_START);
             }

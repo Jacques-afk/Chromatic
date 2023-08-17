@@ -16,3 +16,5 @@ MonoBehaviour:
   displayName: Lost Delivery Driver
   questPrerequisite: []
   questStepsPrefabs: []
+  questDescription: 
+  questGiver: 

@@ -16,6 +16,11 @@ public class QuestInfoSO : ScriptableObject
     [Header("Quest Step Prefabs")]
     public GameObject[] questStepsPrefabs;
 
+    [TextArea(4, 4)]
+    public string questDescription;
+
+    public string questGiver;
+
     //Rewards to be placed here.
     //[Header("Quest Reward")]
     //Code

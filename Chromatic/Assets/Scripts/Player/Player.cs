@@ -4,11 +4,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-interface IInteractable
-{
-    public void Interact();
-}
-
 public class Player : MonoBehaviour
 {
 
@@ -21,11 +16,11 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Raycast();
+        //Raycast();
     }
 
    
-    void Raycast()
+    /*void Raycast()
     {
         float debugDuration = 2.0f;
 
@@ -43,6 +38,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+    */
 
     #region Input Event
 

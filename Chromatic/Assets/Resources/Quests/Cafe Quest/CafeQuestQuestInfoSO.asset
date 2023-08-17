@@ -18,3 +18,5 @@ MonoBehaviour:
   questStepsPrefabs:
   - {fileID: 4244269952652017424, guid: 64ed81ca4cb1c6147a78fc914f7d1cf8, type: 3}
   - {fileID: 1717955304743324756, guid: 88391664dff917040bce906c1ca30ba4, type: 3}
+  questDescription: Help Enrico. (place holder)
+  questGiver: Enrico
