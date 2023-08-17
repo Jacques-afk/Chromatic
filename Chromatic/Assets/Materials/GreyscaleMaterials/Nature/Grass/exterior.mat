@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: stall1_gs
-  m_Shader: {fileID: -6465566751694194690, guid: 4f730acbe35049848b25432968e8c355,
+  m_Name: exterior
+  m_Shader: {fileID: -6465566751694194690, guid: 9d673d1e98adb914b9eb981d7c321b66,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -21,10 +21,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: 99880a63fe8fb714387bbb2e6b6d92c2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -39,15 +35,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Metallic: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.5
-    - _Strength: 1
+    - _SwayAmplitude: 0.2
+    - _SwaySpeed: 2
     m_Colors:
-    - _Flash: {r: 0, g: 0, b: 0, a: 0}
+    - _GrassColor: {r: 0.3019608, g: 0.98039216, b: 0.18039216, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4595956231478485350
+--- !u!114 &3000365962779341406
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
