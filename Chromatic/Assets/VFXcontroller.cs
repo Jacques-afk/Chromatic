@@ -47,10 +47,6 @@ public class VFXcontroller : MonoBehaviour
 
 
 
-
-
-
-
     // public void color_Petshop(){
     //     StartCoroutine(Petshop_VFX());
     // }
@@ -67,9 +63,13 @@ public class VFXcontroller : MonoBehaviour
 
     }
 
+    public void color_beach(){
 
+    }
 
+    public void color_terrain(){
 
+    }
 
     public void color_townArea1(){
         StartCoroutine(townArea1_VFX());
@@ -78,6 +78,49 @@ public class VFXcontroller : MonoBehaviour
     public void color_parkArea2(){
         StartCoroutine(parkArea2_VFX());
     }
+
+    public void color_parkArea3(){
+
+    }
+
+    public void color_parkArea4(){
+
+    }
+
+
+
+    public void color_townArea1(){
+
+    }
+
+    public void color_townArea2(){
+        
+    }
+    
+    public void color_townArea3(){
+        
+    }
+
+    public void color_townArea4(){
+        
+    }
+
+
+    public void color_sideArea1(){
+        
+    }
+
+    public void color_sideArea2(){
+        
+    }
+
+    public void color_sideArea3(){
+        
+    }
+
+
+
+
 
 
     IEnumerator townArea1_VFX(){
@@ -102,10 +145,6 @@ public class VFXcontroller : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         flashbang.playbackSpeed = 0.9f;
     }
-
-
-
-
 
 
     IEnumerator parkArea2_VFX(){

@@ -18,6 +18,7 @@ TagManager:
   - sideArea1
   - sideArea2
   - sideArea3
+  - beach
   layers:
   - Default
   - TransparentFX
