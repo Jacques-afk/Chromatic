@@ -57,6 +57,7 @@ public class changy: MonoBehaviour
                 flash = true;
                 Debug.Log("flash stop");
 
+
                 red -= 1f;
                 green -= 1f;
                 blue -= 1f;

@@ -13,6 +13,7 @@ TagManager:
   - MChouse
   - parkArea2
   - parkArea1
+  - townArea2
   layers:
   - Default
   - TransparentFX
