@@ -138,7 +138,9 @@ public class InteractionTrigger : MonoBehaviour
             ui.currentDialogueEnded = false;
             player.isSprint = false;
             player.isWalk = false;
-            player.animator.SetTrigger("Normal");
+            player.animator.SetBool("isRunning", false);
+            player.animator.SetBool("isWalking", false);
+            player.animator.SetTrigger("normal");
         }
         if(currentCollided != null)
         {

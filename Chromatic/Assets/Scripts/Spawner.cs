@@ -13,16 +13,8 @@ public class Spawner : MonoBehaviour
 
     public void SpawnObject()
     {
-        /*for(int i = 0; i < objectToSpawn.Count; i++)
-        {
-            GameObject obj = objectToSpawn[i];
-            Transform transform = spawnTransform[i];
-
-            GameObject spawnedObject = Instantiate(obj);
-            obj.transform.position = transform.position;
-        }*/
-
         GameObject objecttospawn = Object.Instantiate(objectToSpawn);
+        objecttospawn.transform.position = locationToSpawn.position;
         objecttospawn.transform.position = locationToSpawn.position;
 
     }
