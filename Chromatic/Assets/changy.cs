@@ -49,39 +49,51 @@ public class changy: MonoBehaviour
         while (flashStop == false){ 
             yield return new WaitForSeconds(0.001f);
 
-            if (flashtime < 35f && flash == false){
+            // if (flashtime < 35f && flash == false){
 
-                material.SetColor("_Flash", Color.white * flashtime);
-                flashtime += (Time.deltaTime * 20);      
-                Debug.Log("increase start");               
-                yield return null;
-            }
+            //     material.SetColor("_Flash", Color.white * flashtime);
+            //     flashtime += (Time.deltaTime * 20);      
+            //     Debug.Log("increase start");               
+            //     yield return null;
+            // }
 
-            if (flashtime >= 9f){                         //stop before it gets too bright, number gotten from testing
+            // if (flashtime >= 9f){                         //stop before it gets too bright, number gotten from testing
                 flash = true;
                 Debug.Log("decrease start");
                 currentColor = material.GetColor("_Flash");
 
-                currentColor.r -= rateOf_Decrease;
-                currentColor.g -= rateOf_Decrease;
-                currentColor.b -= rateOf_Decrease;
 
-                // var factor = 1.1f;
-                // createdColor = new Color(currentColor.r * factor, currentColor.g * factor, currentColor.b * factor, currentColor.a);
-
-                material.SetColor("_Flash", createdColor);    
-                material.SetFloat("_Strength", colortime);
+                material.SetFloat("_Strength", time);
                 colortime += Time.deltaTime;
 
+                material.SetFloat("_Strength", 1f);
+ 
+                // currentColor.r -= rateOf_Decrease;
+                // currentColor.g -= rateOf_Decrease;
+                // currentColor.b -= rateOf_Decrease;
 
-                if (material.GetFloat("_Strength") >= 1){
-                    material.SetFloat("_Strength", 1f);
+                // // var factor = 1.1f;
+                // // createdColor = new Color(currentColor.r * factor, currentColor.g * factor, currentColor.b * factor, currentColor.a);
+
+                // material.SetColor("_Flash", currentColor);    
+                // material.SetFloat("_Strength", colortime);
+                // colortime += Time.deltaTime;
+
+                // yield return new WaitForSeconds(1f);
+
+
+                // if (material.GetFloat("_Strength") >= 1){
+                //     material.SetFloat("_Strength", 1f);
+                // }
+
+                // if (currentColor.r <= 0){
+                //    flashStop = true;
+                // }
+
+                if ((material.GetFloat("_Strength") >= 1)){
+                    flashStop = true;
                 }
-
-                if (currentColor.r <= 0){
-                   flashStop = true;
-                }   
-            }
+            // }
 
         }
     }
