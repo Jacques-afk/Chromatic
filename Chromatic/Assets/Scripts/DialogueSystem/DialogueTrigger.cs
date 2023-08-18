@@ -42,6 +42,7 @@ public class DialogueTrigger : MonoBehaviour
             playerMovement.isSprint = false;
             playerMovement.isWalk = false;
             playerMovement.animator.SetTrigger("Normal");
+            Destroy(this.gameObject);
         }
     }
 }

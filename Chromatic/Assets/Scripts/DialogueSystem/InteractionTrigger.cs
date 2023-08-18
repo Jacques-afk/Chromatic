@@ -78,6 +78,12 @@ public class InteractionTrigger : MonoBehaviour
         {
             ui.interactBoxAnimator.SetBool("canInteract", true);
             ui.interactBoxText.text = "'E' to Open Door!";
+            outlineMaterialManager = other.GetComponent<OutlineMaterialManager>();
+            outlineMaterialManager.AddMaterialToAll();
+        }
+        else if (other.CompareTag("Ignore"))
+        {
+            Debug.Log("Do Nothing");
         }
         else
         {
@@ -101,7 +107,7 @@ public class InteractionTrigger : MonoBehaviour
             outlineMaterialManager.RemoveMaterialFromAll();
             outlineMaterialManager = null;
         }
-        else if (other.CompareTag("Interactable"))
+        else if (other.CompareTag("Interactable") || other.CompareTag("Door"))
         {
             outlineMaterialManager.RemoveMaterialFromAll();
             outlineMaterialManager = null;
