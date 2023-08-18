@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: DarumadropOne-Regular Atlas Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - UNDERLAY_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -72,7 +73,7 @@ Material:
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
     - _ScaleRatioB: 0.73125
-    - _ScaleRatioC: 0.73125
+    - _ScaleRatioC: 0.59402925
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -86,9 +87,9 @@ Material:
     - _TextureHeight: 1024
     - _TextureWidth: 1024
     - _UnderlayDilate: 0
-    - _UnderlayOffsetX: 0
-    - _UnderlayOffsetY: 0
-    - _UnderlaySoftness: 0
+    - _UnderlayOffsetX: 1
+    - _UnderlayOffsetY: -1
+    - _UnderlaySoftness: 0.231
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
     - _WeightBold: 0.75
@@ -959,6 +960,21 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+  - m_Index: 313
+    m_Metrics:
+      m_Width: 40.0625
+      m_Height: 61.015625
+      m_HorizontalBearingX: 3.953125
+      m_HorizontalBearingY: 56.96875
+      m_HorizontalAdvance: 47.875
+    m_GlyphRect:
+      m_X: 168
+      m_Y: 442
+      m_Width: 42
+      m_Height: 62
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   - m_Index: 325
     m_Metrics:
       m_Width: 12.421875
@@ -1061,6 +1077,21 @@ MonoBehaviour:
       m_Y: 148
       m_Width: 54
       m_Height: 59
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 342
+    m_Metrics:
+      m_Width: 36.71875
+      m_Height: 54.546875
+      m_HorizontalBearingX: 3.875
+      m_HorizontalBearingY: 53.640625
+      m_HorizontalAdvance: 44.375
+    m_GlyphRect:
+      m_X: 244
+      m_Y: 381
+      m_Width: 38
+      m_Height: 55
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -1184,36 +1215,6 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-  - m_Index: 342
-    m_Metrics:
-      m_Width: 36.71875
-      m_Height: 54.546875
-      m_HorizontalBearingX: 3.875
-      m_HorizontalBearingY: 53.640625
-      m_HorizontalAdvance: 44.375
-    m_GlyphRect:
-      m_X: 244
-      m_Y: 381
-      m_Width: 38
-      m_Height: 55
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-  - m_Index: 313
-    m_Metrics:
-      m_Width: 40.0625
-      m_Height: 61.015625
-      m_HorizontalBearingX: 3.953125
-      m_HorizontalBearingY: 56.96875
-      m_HorizontalAdvance: 47.875
-    m_GlyphRect:
-      m_X: 168
-      m_Y: 442
-      m_Width: 42
-      m_Height: 62
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 32
@@ -1258,6 +1259,10 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 50
     m_GlyphIndex: 306
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 57
+    m_GlyphIndex: 313
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 59
@@ -1380,6 +1385,10 @@ MonoBehaviour:
     m_GlyphIndex: 57
     m_Scale: 1
   - m_ElementType: 1
+    m_Unicode: 92
+    m_GlyphIndex: 342
+    m_Scale: 1
+  - m_ElementType: 1
     m_Unicode: 95
     m_GlyphIndex: 383
     m_Scale: 1
@@ -1490,14 +1499,6 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 8230
     m_GlyphIndex: 329
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 92
-    m_GlyphIndex: 342
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 57
-    m_GlyphIndex: 313
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: 7727688371966587187}
