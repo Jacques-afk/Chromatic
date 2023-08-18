@@ -34,19 +34,18 @@ public class VFXcontroller : MonoBehaviour
         parkArea2 = GameObject.FindGameObjectsWithTag("parkArea2");
     }
 
-    // void Start()
-    // {
-    //     StartCoroutine(volcanoe());
-    // }
+    void Start()
+    {
+        StartCoroutine(volcanoe());
+    }
 
-    // IEnumerator volcanoe(){
-    //     yield return new WaitForSeconds(1.5f);
-    //     volcanoeVFX.playRate = volcanoe_Speed;
-    // }
-
-
+    IEnumerator volcanoe(){
+        yield return new WaitForSeconds(1.5f);
+        volcanoeVFX.playRate = volcanoe_Speed;
+    }
 
 
+    
     // public void color_Petshop(){
     //     StartCoroutine(Petshop_VFX());
     // }
@@ -71,10 +70,6 @@ public class VFXcontroller : MonoBehaviour
 
     }
 
-    public void color_townArea1(){
-        StartCoroutine(townArea1_VFX());
-    }
-
     public void color_parkArea2(){
         StartCoroutine(parkArea2_VFX());
     }
@@ -90,7 +85,7 @@ public class VFXcontroller : MonoBehaviour
 
 
     public void color_townArea1(){
-
+        StartCoroutine(townArea1_VFX());
     }
 
     public void color_townArea2(){
@@ -169,8 +164,8 @@ public class VFXcontroller : MonoBehaviour
 
     void Update(){
 
-        if (Input.GetKeyDown(KeyCode.A)){
-            color_townArea1();  
-        }
+        // if (Input.GetKeyDown(KeyCode.A)){
+        //     color_townArea1();  
+        // }
     }
 }
