@@ -66,8 +66,8 @@ public class changy: MonoBehaviour
                 currentColor.g -= rateOf_Decrease;
                 currentColor.b -= rateOf_Decrease;
 
-                var factor = 1.1f;
-                createdColor = new Color(currentColor.r * factor, currentColor.g * factor, currentColor.b * factor, currentColor.a);
+                // var factor = 1.1f;
+                // createdColor = new Color(currentColor.r * factor, currentColor.g * factor, currentColor.b * factor, currentColor.a);
 
                 material.SetColor("_Flash", createdColor);    
                 material.SetFloat("_Strength", colortime);

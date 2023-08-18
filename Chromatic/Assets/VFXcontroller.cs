@@ -18,6 +18,8 @@ public class VFXcontroller : MonoBehaviour
 
     public GameObject[] townArea1;
     public GameObject[] townArea2;
+    public GameObject[] townArea3;
+    public GameObject[] townArea4;
 
     public GameObject[] parkArea2;
 
@@ -31,6 +33,7 @@ public class VFXcontroller : MonoBehaviour
         cafe = GameObject.FindGameObjectsWithTag("cafe");
 
         townArea1 = GameObject.FindGameObjectsWithTag("townArea1");
+        townArea4 = GameObject.FindGameObjectsWithTag("townArea4");
         parkArea2 = GameObject.FindGameObjectsWithTag("parkArea2");
     }
 
@@ -96,7 +99,7 @@ public class VFXcontroller : MonoBehaviour
     }
 
     public void color_townArea4(){
-        
+        StartCoroutine(townArea4_VFX());
     }
 
 
@@ -130,6 +133,16 @@ public class VFXcontroller : MonoBehaviour
     IEnumerator townArea1_VFX(){
 
         foreach (GameObject obj in townArea1){
+            changy colorswap = obj.GetComponent<changy>();
+            colorswap.enabled = true;
+        } 
+        yield return null;
+    }
+
+
+    IEnumerator townArea4_VFX(){
+
+        foreach (GameObject obj in townArea4){
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
@@ -174,7 +187,7 @@ public class VFXcontroller : MonoBehaviour
     void Update(){
 
         if (Input.GetKeyDown(KeyCode.A)){
-            color_Cafe();  
+            color_townArea4();  
         }
     }
 }
