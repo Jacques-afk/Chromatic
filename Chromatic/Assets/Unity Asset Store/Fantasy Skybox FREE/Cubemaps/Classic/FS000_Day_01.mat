@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Tex:
-        m_Texture: {fileID: 8900000, guid: 1331a26d2843a1148a23d5ddc81629dc, type: 3}
+        m_Texture: {fileID: 8900000, guid: 33762238fbd938c4c97707195d7e97e2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _UpTex:
@@ -60,7 +60,7 @@ Material:
     - _Layout: 0
     - _Mapping: 1
     - _MirrorOnBack: 0
-    - _Rotation: 94.44717
+    - _Rotation: 0.020566799
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Tint: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 0.5019608}

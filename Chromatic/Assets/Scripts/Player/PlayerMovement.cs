@@ -40,6 +40,10 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public Rigidbody rb;
 
+    [Header("Handling Slope")]
+    public float maxSlopeAngle;
+    private RaycastHit slopeHit;
+
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -174,6 +178,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (!ui.inDialogue)
         {
+            if (onSlope())
+            {
+                rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 13.0f, ForceMode.Force);
+            }
             if (isGrounded)
             {
                 if (isSprint)
@@ -229,6 +237,21 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJump()
     {
         canJump = true;
+    }
+
+    private bool onSlope()
+    {
+        if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, 2f))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle < maxSlopeAngle && angle != 0;
+        }
+        return false;
+    }
+
+    private Vector3 GetSlopeMoveDirection()
+    {
+        return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
 
     #region Input Event
