@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3261667165005221551}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square_Tiled_Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1837770720411310771}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CanChangeTextures
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,6 +118,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Short (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096201240361207727, guid: 7e3b1c967c1806b429009f3af7cc004f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5616701950638873877, guid: 7e3b1c967c1806b429009f3af7cc004f,
         type: 3}
@@ -284,6 +289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottom_Wall_Long (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2938235236901143489, guid: 1d7cc279bd91a9d49b9b3d5c03e3e147,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3730749680240878100, guid: 1d7cc279bd91a9d49b9b3d5c03e3e147,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -313,6 +323,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Horizontal (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626577794539646097, guid: 592e79f777fb55448970daa17649eec5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9006093562462254635, guid: 592e79f777fb55448970daa17649eec5,
         type: 3}
@@ -408,6 +423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Tall (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913713588391567320, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6438576822057338210, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
         type: 3}
@@ -569,6 +589,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_Door (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2930162820626345893, guid: 38e4c5df9498f0e4a91dde4ce5760bf6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e4c5df9498f0e4a91dde4ce5760bf6, type: 3}
 --- !u!4 &8755706042828773310 stripped
@@ -588,6 +613,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Roof 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642218857682959882, guid: 3a26535256561db4f968b29d059275b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5415483822240146608, guid: 3a26535256561db4f968b29d059275b4,
         type: 3}
@@ -688,6 +718,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Tall (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913713588391567320, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6438576822057338210, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
         type: 3}
@@ -854,6 +889,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Metal_Beam_Horizontal_Big (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 9101834065520533170, guid: ed3b62bb6402ac845974465ab042ff68,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3b62bb6402ac845974465ab042ff68, type: 3}
 --- !u!4 &3420684122376457023 stripped
@@ -873,6 +913,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Short (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096201240361207727, guid: 7e3b1c967c1806b429009f3af7cc004f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5616701950638873877, guid: 7e3b1c967c1806b429009f3af7cc004f,
         type: 3}
@@ -974,6 +1019,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Tall (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 5913713588391567320, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6438576822057338210, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
         type: 3}
       propertyPath: m_RootOrder
@@ -1064,6 +1114,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modular_Doorway (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4857374868125558373, guid: 58b8f0d3f13a0244e8eb52109aaad899,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5198011699000048863, guid: 58b8f0d3f13a0244e8eb52109aaad899,
         type: 3}
       propertyPath: m_RootOrder
@@ -1153,6 +1208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Short (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096201240361207727, guid: 7e3b1c967c1806b429009f3af7cc004f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5616701950638873877, guid: 7e3b1c967c1806b429009f3af7cc004f,
         type: 3}
@@ -1319,6 +1379,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottom_Wall_Long (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2938235236901143489, guid: 1d7cc279bd91a9d49b9b3d5c03e3e147,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3730749680240878100, guid: 1d7cc279bd91a9d49b9b3d5c03e3e147,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1414,6 +1479,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof_Part (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1065611306380187324, guid: 7963b7a9b197bf6479819b936abbd517,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1569842735047898985, guid: 7963b7a9b197bf6479819b936abbd517,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1443,6 +1513,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Horizontal (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626577794539646097, guid: 592e79f777fb55448970daa17649eec5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9006093562462254635, guid: 592e79f777fb55448970daa17649eec5,
         type: 3}
@@ -1609,6 +1684,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Metal_Beam_Horizontal_Big (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 9101834065520533170, guid: ed3b62bb6402ac845974465ab042ff68,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3b62bb6402ac845974465ab042ff68, type: 3}
 --- !u!4 &3420684121995081913 stripped
@@ -1704,6 +1784,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Long (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4530187026602486858, guid: 173cf50d7c162a442a58cbf3a2f2fa09,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173cf50d7c162a442a58cbf3a2f2fa09, type: 3}
 --- !u!4 &8067907187884050918 stripped
@@ -1728,6 +1813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Horizontal_Circular (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316907614154736214, guid: c3b55a79ca0734042978cca215507e71,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8655997397821757676, guid: c3b55a79ca0734042978cca215507e71,
         type: 3}
@@ -1824,6 +1914,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Tall (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5913713588391567320, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6438576822057338210, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
         type: 3}
       propertyPath: m_RootOrder
@@ -1918,6 +2013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Horizontal_Circular (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316907614154736214, guid: c3b55a79ca0734042978cca215507e71,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8655997397821757676, guid: c3b55a79ca0734042978cca215507e71,
         type: 3}
@@ -2014,6 +2114,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden_Beam_Horizontal (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8626577794539646097, guid: 592e79f777fb55448970daa17649eec5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9006093562462254635, guid: 592e79f777fb55448970daa17649eec5,
         type: 3}
       propertyPath: m_RootOrder
@@ -2103,6 +2208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Short (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096201240361207727, guid: 7e3b1c967c1806b429009f3af7cc004f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5616701950638873877, guid: 7e3b1c967c1806b429009f3af7cc004f,
         type: 3}
@@ -2198,6 +2308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Short (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096201240361207727, guid: 7e3b1c967c1806b429009f3af7cc004f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5616701950638873877, guid: 7e3b1c967c1806b429009f3af7cc004f,
         type: 3}
@@ -2369,6 +2484,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Long (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4530187026602486858, guid: 173cf50d7c162a442a58cbf3a2f2fa09,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173cf50d7c162a442a58cbf3a2f2fa09, type: 3}
 --- !u!4 &8067907186288314969 stripped
@@ -2459,6 +2579,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottom_Wall_Long (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2938235236901143489, guid: 1d7cc279bd91a9d49b9b3d5c03e3e147,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3730749680240878100, guid: 1d7cc279bd91a9d49b9b3d5c03e3e147,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2483,6 +2608,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Short (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096201240361207727, guid: 7e3b1c967c1806b429009f3af7cc004f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5616701950638873877, guid: 7e3b1c967c1806b429009f3af7cc004f,
         type: 3}
@@ -2584,6 +2714,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden_Beam_Horizontal (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8626577794539646097, guid: 592e79f777fb55448970daa17649eec5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9006093562462254635, guid: 592e79f777fb55448970daa17649eec5,
         type: 3}
       propertyPath: m_RootOrder
@@ -2673,6 +2808,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Short (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096201240361207727, guid: 7e3b1c967c1806b429009f3af7cc004f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5616701950638873877, guid: 7e3b1c967c1806b429009f3af7cc004f,
         type: 3}
@@ -2844,6 +2984,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Metal_Beam_Horizontal_Big (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9101834065520533170, guid: ed3b62bb6402ac845974465ab042ff68,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3b62bb6402ac845974465ab042ff68, type: 3}
 --- !u!4 &3420684121283590933 stripped
@@ -2868,6 +3013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Tall (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913713588391567320, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6438576822057338210, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
         type: 3}
@@ -3029,6 +3179,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof_Part (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1065611306380187324, guid: 7963b7a9b197bf6479819b936abbd517,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1569842735047898985, guid: 7963b7a9b197bf6479819b936abbd517,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3129,6 +3284,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Metal_Beam_Horizontal_Big (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 9101834065520533170, guid: ed3b62bb6402ac845974465ab042ff68,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3b62bb6402ac845974465ab042ff68, type: 3}
 --- !u!4 &3420684121106609583 stripped
@@ -3148,6 +3308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Short (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096201240361207727, guid: 7e3b1c967c1806b429009f3af7cc004f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5616701950638873877, guid: 7e3b1c967c1806b429009f3af7cc004f,
         type: 3}
@@ -3314,6 +3479,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottom_Wall_Long (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2938235236901143489, guid: 1d7cc279bd91a9d49b9b3d5c03e3e147,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3730749680240878100, guid: 1d7cc279bd91a9d49b9b3d5c03e3e147,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3414,6 +3584,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Long (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4530187026602486858, guid: 173cf50d7c162a442a58cbf3a2f2fa09,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173cf50d7c162a442a58cbf3a2f2fa09, type: 3}
 --- !u!4 &8067907185815647459 stripped
@@ -3438,6 +3613,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Tall (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913713588391567320, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6438576822057338210, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
         type: 3}
@@ -3534,6 +3714,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden_Beam_Horizontal_Circular (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8316907614154736214, guid: c3b55a79ca0734042978cca215507e71,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8655997397821757676, guid: c3b55a79ca0734042978cca215507e71,
         type: 3}
       propertyPath: m_RootOrder
@@ -3623,6 +3808,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Metal_Beam_Horizontal (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103868587954059013, guid: 0b82388b4b05088408b23c41e4c0e70f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7628484771147869631, guid: 0b82388b4b05088408b23c41e4c0e70f,
         type: 3}
@@ -3719,6 +3909,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Tall (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5913713588391567320, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6438576822057338210, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
         type: 3}
       propertyPath: m_RootOrder
@@ -3808,6 +4003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Short (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096201240361207727, guid: 7e3b1c967c1806b429009f3af7cc004f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5616701950638873877, guid: 7e3b1c967c1806b429009f3af7cc004f,
         type: 3}
@@ -3903,6 +4103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Short (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096201240361207727, guid: 7e3b1c967c1806b429009f3af7cc004f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5616701950638873877, guid: 7e3b1c967c1806b429009f3af7cc004f,
         type: 3}
@@ -4074,6 +4279,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall_Long (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4530187026602486858, guid: 173cf50d7c162a442a58cbf3a2f2fa09,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173cf50d7c162a442a58cbf3a2f2fa09, type: 3}
 --- !u!4 &8067907186448120034 stripped
@@ -4098,6 +4308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Vertical_Tall (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913713588391567320, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6438576822057338210, guid: 9bd2f6cb82eedea449f1e0f1290631ae,
         type: 3}
@@ -4193,6 +4408,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wooden_Beam_Horizontal_Circular (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316907614154736214, guid: c3b55a79ca0734042978cca215507e71,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8655997397821757676, guid: c3b55a79ca0734042978cca215507e71,
         type: 3}

@@ -141,35 +141,37 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalInput = Input.GetAxisRaw("Horizontal");
             verticalInput = Input.GetAxisRaw("Vertical");
+
+            if (verticalInput != 0)
+            {
+                if (isSprint)
+                {
+                    isWalk = false;
+                }
+                else
+                {
+                    isWalk = true;
+                }
+
+            }
+            else if (horizontalInput != 0)
+            {
+                if (isSprint)
+                {
+                    isWalk = false;
+                }
+                else
+                {
+                    isWalk = true;
+                }
+            }
+            else
+            {
+                isWalk = false;
+            }
         }
 
-        if(verticalInput != 0)
-        {
-            if (isSprint)
-            {
-                isWalk = false;
-            }
-            else
-            {
-                isWalk = true;
-            }
-            
-        }
-        else if (horizontalInput != 0)
-        {
-            if (isSprint)
-            {
-                isWalk = false;
-            }
-            else
-            {
-                isWalk = true;
-            }
-        }
-        else
-        {
-            isWalk = false;
-        }
+        
     }
 
     private void MovePlayer()

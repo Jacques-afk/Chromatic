@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633ab9248efaf844d84872748d948fd3, type: 3}
+  m_Name: DeliveryManQuestNPC
+  m_EditorClassIdentifier: 
+  npcName: Delivery Man
+  dialogueData: {fileID: 11400000, guid: 359bdab719c8aa04ca3d289ec997636e, type: 2}
+  dialogueData2: {fileID: 11400000, guid: 2c87462d26898f144b2ab007fb873e31, type: 2}
+  npcQuest: {fileID: 11400000, guid: 25f93e4b3310c6b46a9dc501aa6aba52, type: 2}
+  startPoint: 0
+  endPoint: 0
+  dialogueQuestStart: {fileID: 11400000, guid: e581e737ff6742b40aea136fb767811b, type: 2}
+  dialogueQuestInProgress: {fileID: 11400000, guid: 1cfd26e85ae211c40bff3b948fd2c349,
+    type: 2}
+  dialogueQuestEnded: {fileID: 11400000, guid: 8f188e4c48c70f449927ca4a12ce79ad, type: 2}
