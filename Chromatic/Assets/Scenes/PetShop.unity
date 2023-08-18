@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volcanoeVFX: {fileID: 0}
-  flashbang: {fileID: 1272140790}
+  flashbang: {fileID: 0}
   sea: {fileID: 0}
   pond: {fileID: 0}
   volcanoe_Speed: 0.02
