@@ -21,6 +21,10 @@ TagManager:
   - beach
   - Door
   - Ignore
+  - townArea3
+  - townArea4
+  - parkArea3
+  - parkArea4
   layers:
   - Default
   - TransparentFX

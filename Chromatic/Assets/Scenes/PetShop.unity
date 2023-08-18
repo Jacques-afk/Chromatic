@@ -848,6 +848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &21691584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2657,6 +2658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &128580297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3208,6 +3210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &144715325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5775,6 +5778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &257558012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8239,6 +8243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &350410212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9274,6 +9279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &433963651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10288,6 +10294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &470906529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10614,6 +10621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &487009500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10884,6 +10892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &504231603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11924,6 +11933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &557548551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14058,6 +14068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &654467129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14163,6 +14174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &655792765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14966,6 +14978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &707832355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15454,6 +15467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &742998620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16097,6 +16111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!4 &768676616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 366748406122473111, guid: 02056c2a37f6b924c99afb96eecfa51b,
@@ -16614,6 +16629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &795560544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19286,6 +19302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &905012899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19387,6 +19404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &921274837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21482,6 +21500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1 &1008998876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8152918734093638421, guid: 92eef0bf57562494cb2371c17a3afb5f,
@@ -22582,6 +22601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1 &1036846384 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5333506295816740741, guid: 517655be643093645b253740d734ed5c,
@@ -22657,6 +22677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1043095314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23277,6 +23298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1076219342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23512,7 +23534,7 @@ PrefabInstance:
     - target: {fileID: 6785040707600697919, guid: 66165ca9646b5a349ad3098e76ee4bf3,
         type: 3}
       propertyPath: m_TagString
-      value: petshop
+      value: cafe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66165ca9646b5a349ad3098e76ee4bf3, type: 3}
@@ -24530,6 +24552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1131516764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24710,6 +24733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!4 &1139900561 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5025139743773652050, guid: 11b037b6ae76c7c41b42d70c0151972e,
@@ -24730,6 +24754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!4 &1143365244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1070032457774158158, guid: fccfb7f2e889d454497671ae4a5f2ef4,
@@ -24910,6 +24935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1153908869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25690,6 +25716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1179378632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26790,6 +26817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1237777132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27349,6 +27377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1258105293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32803,6 +32832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1283650598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33212,6 +33242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1308776567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34083,6 +34114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1333140145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35282,6 +35314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1385358858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36442,6 +36475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1418677672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37854,6 +37888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1 &1499496151 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4967789155142048116, guid: 162f53406ae42a948934ab64a1edcdcc,
@@ -37874,6 +37909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1500325917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38275,6 +38311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!4 &1529928214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8822319433066676655, guid: 92eef0bf57562494cb2371c17a3afb5f,
@@ -38295,6 +38332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1530430807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39983,6 +40021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1599187512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40307,6 +40346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1607276264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40481,6 +40521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1617971449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40807,6 +40848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1638556262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40977,6 +41019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!4 &1643563637 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5745169558117270478, guid: 162f53406ae42a948934ab64a1edcdcc,
@@ -40997,6 +41040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1645114875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41246,6 +41290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1652599092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41497,6 +41542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1668516918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41987,6 +42033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1687218150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43999,6 +44046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1808733053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44319,6 +44367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1819974462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44607,6 +44656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1826713500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44627,7 +44677,7 @@ PrefabInstance:
     - target: {fileID: 3756533948726860362, guid: 50d402f684d93ec4bb83233b5725b48c,
         type: 3}
       propertyPath: m_TagString
-      value: petshop
+      value: cafe
       objectReference: {fileID: 0}
     - target: {fileID: 4569520940064375024, guid: 50d402f684d93ec4bb83233b5725b48c,
         type: 3}
@@ -44856,6 +44906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1833935114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45036,6 +45087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1853283748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45131,6 +45183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1861729313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45485,6 +45538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1867246097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46284,6 +46338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1897196006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46379,6 +46434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!4 &1904578335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5745169558117270478, guid: 162f53406ae42a948934ab64a1edcdcc,
@@ -46399,6 +46455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1906442394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46876,6 +46933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1922716364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47046,6 +47104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1927822749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47381,6 +47440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1938741547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47476,6 +47536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!4 &1947887565 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5745169558117270478, guid: 162f53406ae42a948934ab64a1edcdcc,
@@ -47496,6 +47557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1957291407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48309,6 +48371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1983059598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48708,6 +48771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &1996486282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48953,6 +49017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &2003879017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49123,6 +49188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &2007819270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49542,6 +49608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &2022488170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49787,6 +49854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &2036833700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50450,6 +50518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &2062962897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50465,7 +50534,7 @@ PrefabInstance:
     - target: {fileID: 2392976978881189091, guid: 9140d655279880f4b90d5523ca7c5303,
         type: 3}
       propertyPath: m_TagString
-      value: petshop
+      value: cafe
       objectReference: {fileID: 0}
     - target: {fileID: 3061989588078087769, guid: 9140d655279880f4b90d5523ca7c5303,
         type: 3}
@@ -50849,6 +50918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &2099020061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50944,6 +51014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &2104406222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51118,6 +51189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &2113671681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51298,6 +51370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1 &2120105652 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 598293546977854262, guid: b0780259f7ad1594c85a9d5b2de14098,
@@ -51318,6 +51391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1 &2122372696 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4967789155142048116, guid: 162f53406ae42a948934ab64a1edcdcc,
@@ -51338,6 +51412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &2125928396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51433,6 +51508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 0}
   material: {fileID: 0}
+  rateOf_Decrease: 0.01
 --- !u!1001 &2129208844
 PrefabInstance:
   m_ObjectHideFlags: 0
