@@ -651,8 +651,41 @@ public class VFXcontroller : MonoBehaviour
             color_parkArea1(); 
         }
         if (Input.GetKeyDown(KeyCode.L)){
-            color_parkArea1(); 
+            color_parkArea4(); 
         }
+
+
+
+        if (Input.GetKeyDown(KeyCode.K)){
+            color_townArea1(); 
+        }
+        if (Input.GetKeyDown(KeyCode.S)){
+            color_townArea2(); 
+        }
+        if (Input.GetKeyDown(KeyCode.I)){
+            color_townArea3(); 
+        }
+        if (Input.GetKeyDown(KeyCode.Y)){
+            color_townArea4(); 
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Z)){
+            color_sideArea1(); 
+        }
+        if (Input.GetKeyDown(KeyCode.X)){
+            color_sideArea2(); 
+        }
+        if (Input.GetKeyDown(KeyCode.C)){
+            color_sideArea3(); 
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.G)){
+            color_beach(); 
+        }
+
+
     }
 }
  
