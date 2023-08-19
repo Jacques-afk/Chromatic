@@ -87,7 +87,6 @@ public class changy : MonoBehaviour
                 material.SetColor("_Flash", change);   
                 material.SetFloat("_Strength", colortime);
                 colortime += Time.deltaTime;
-                Debug.Log("happy happy happy");
 
                 float strength = material.GetFloat("_Strength");
 

@@ -150,12 +150,13 @@ public class VFXcontroller : MonoBehaviour
 
     void Start()
     {
-        // StartCoroutine(volcanoe());
-        // ocean.SetActive(false);       //to solve ocean shader not being greyscaled and dissapearing issue
+        StartCoroutine(volcanoe());
+        ocean.SetActive(false);       //to solve ocean shader not being greyscaled and dissapearing issue
+        pond.SetActive(false);        //same issue with ocean
 
-        // foreach (VisualEffect yuh in Fireworks){
-        //     yuh.Stop();                     //stop the final cutscene fireworks from playing
-        // }
+        foreach (VisualEffect yuh in Fireworks){
+            yuh.Stop();                            //stop the final cutscene fireworks from playing
+        }
     }
 
     IEnumerator volcanoe(){
@@ -394,23 +395,23 @@ public class VFXcontroller : MonoBehaviour
         } 
         yield return new WaitForSeconds(0.6f);
 
-        // foreach (ParticleSystem yuh in Sparks_TA4){
-        //     yuh.Play();
-        // }
+        foreach (ParticleSystem yuh in Sparks_TA4){
+            yuh.Play();
+        }
 
-        // foreach (ParticleSystem yuo in Falling_TA4){
-        //     yuo.Play();
-        //     yuo.playbackSpeed = 0.5f;
-        // }
+        foreach (ParticleSystem yuo in Falling_TA4){
+            yuo.Play();
+            yuo.playbackSpeed = 0.5f;
+        }
         
-        // Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        // grass_TA4.SetColor("_GrassColor", grassColor);
+        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        grass_TA4.SetColor("_GrassColor", grassColor);
             
-        // Color treeBark = new Color(1f, 1f, 1f, 1f);;
-        // treeBark_TA4.color = treeBark;
+        Color treeBark = new Color(1f, 1f, 1f, 1f);;
+        treeBark_TA4.color = treeBark;
 
-        // Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        // treeLeaves_TA4.color = treeLeaves;
+        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        treeLeaves_TA4.color = treeLeaves;
     }
 
     IEnumerator parkArea1_VFX(){
@@ -475,6 +476,9 @@ public class VFXcontroller : MonoBehaviour
             colorswap.enabled = true;
         } 
         yield return new WaitForSeconds(0.6f);
+
+        pond.SetActive(true);
+        fakePond.SetActive(false);
 
         foreach (ParticleSystem yuh in Sparks_PA3){
             yuh.Play();
@@ -612,6 +616,7 @@ public class VFXcontroller : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
 
         ocean.SetActive(true);
+        fakeOcean.SetActive(false);
 
         foreach (VisualEffect yuh in Sparks_Beach){
             yuh.Play();
@@ -637,7 +642,7 @@ public class VFXcontroller : MonoBehaviour
     void Update(){
 
         if (Input.GetKeyDown(KeyCode.F)){
-            color_townArea4(); 
+            color_parkArea3(); 
         }
     }
 }
