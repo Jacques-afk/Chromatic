@@ -91,10 +91,34 @@ public class VFXcontroller : MonoBehaviour
     public ParticleSystem[] Sparks_SA2;
     public ParticleSystem[] Sparks_SA3;
 
-    public ParticleSystem[] Sparks_Beach;
+    public VisualEffect [] Sparks_Beach;
 
     public ParticleSystem[] Fireworks;
     public ParticleSystem[] Confetti;
+    public ParticleSystem[] Wind;
+
+
+    /// <summary>
+    /// Reference to the falling leaves, active them only when a place has been colored.
+    /// </summary>
+
+    public ParticleSystem[] Falling_PA1;
+    public ParticleSystem[] Falling_PA2;
+    public ParticleSystem[] Falling_PA3;
+    public ParticleSystem[] Falling_PA4;
+
+    public ParticleSystem[] Falling_TA1;
+    public ParticleSystem[] Falling_TA2;
+    public ParticleSystem[] Falling_TA3;
+    public ParticleSystem[] Falling_TA4;
+
+    public ParticleSystem[] Falling_SA1;
+    public ParticleSystem[] Falling_SA2;
+    public ParticleSystem[] Falling_SA3;
+
+    /// <summary>
+    /// Instantiate script and find objects related to certain areas via the tags mentioned below.
+    /// </summary>
 
 
     void Awake(){
@@ -135,8 +159,16 @@ public class VFXcontroller : MonoBehaviour
         volcanoeVFX.playRate = volcanoe_Speed;
     }
 
+    IEnumerator windApply(){
 
-    
+        foreach (ParticleSystem yuh in Wind){
+            int randomInt = Random.Range(0,14);
+            yield return new WaitForSeconds(randomInt);
+            yuh.Play();
+        }
+
+    }
+ 
     public void color_Petshop(){         //interior
         StartCoroutine(Petshop_VFX());
     }
@@ -152,9 +184,6 @@ public class VFXcontroller : MonoBehaviour
     public void color_terrain(){
         StartCoroutine(terrain_VFX());
     }
-
-
-
 
     public void color_parkArea1(){
         StartCoroutine(parkArea1_VFX());
@@ -172,9 +201,6 @@ public class VFXcontroller : MonoBehaviour
         StartCoroutine(parkArea4_VFX());
     }
 
-
-
-
     public void color_townArea1(){
         StartCoroutine(townArea1_VFX());
     }
@@ -191,10 +217,6 @@ public class VFXcontroller : MonoBehaviour
         StartCoroutine(townArea4_VFX());
     }
 
-
-
-
-
     public void color_sideArea1(){
         StartCoroutine(sideArea1_VFX());
     }
@@ -209,6 +231,10 @@ public class VFXcontroller : MonoBehaviour
 
     public void color_beach(){
         StartCoroutine(beach_VFX());
+    }
+
+    public void final(){
+        StartCoroutine(color_final());
     }
 
     IEnumerator Cafe_VFX(){
@@ -231,17 +257,21 @@ public class VFXcontroller : MonoBehaviour
 
     IEnumerator terrain_VFX(){
 
+        yield return new WaitForSeconds(3f);  //halfway zooming out from terrain
+
         foreach (GameObject obj in terrain){
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return new WaitForSeconds(0.6f);                  //change this depending on how long u want :o
+        yield return new WaitForSeconds(0.6f);                  //change this depending on how long u want when it is zooming out 
 
-        foreach (ParticleSystem yuh in Confetti){
+        foreach (ParticleSystem yuh in Fireworks){      
             yuh.Play();
         }
 
-        foreach (ParticleSystem yuh in Fireworks){
+        // you can add duration here if you want to pause either effect
+
+        foreach (ParticleSystem yuh in Confetti){
             yuh.Play();
         }
     }
@@ -256,7 +286,12 @@ public class VFXcontroller : MonoBehaviour
     }
 
 
+
     IEnumerator townArea1_VFX(){
+
+        /// <summary>
+        /// Targets the color changing script inside each object with a texture in the area.
+        /// </summary>
 
         foreach (GameObject obj in townArea1){
             changy colorswap = obj.GetComponent<changy>();
@@ -264,6 +299,23 @@ public class VFXcontroller : MonoBehaviour
         } 
         yield return new WaitForSeconds(0.6f);
         
+        /// <summary>
+        /// Play particles, sparks and leaves, related to the area.
+        /// </summary>
+
+        foreach (ParticleSystem yuh in Sparks_TA1){
+            yuh.Play();
+        }
+
+        foreach (ParticleSystem yuo in Falling_TA1){
+            yuo.Play();
+            yuo.playbackSpeed = 0.5f;
+        }
+
+        /// <summary>
+        /// Change the color of the trees and grass in that area.
+        /// </summary>
+
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_TA1.SetColor("_GrassColor", grassColor);
             
@@ -273,6 +325,8 @@ public class VFXcontroller : MonoBehaviour
         Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
         treeLeaves_TA1.color = treeLeaves;
     }
+
+
 
     IEnumerator townArea2_VFX(){
 
@@ -284,6 +338,11 @@ public class VFXcontroller : MonoBehaviour
 
         foreach (ParticleSystem yuh in Sparks_TA2){
             yuh.Play();
+        }
+
+        foreach (ParticleSystem yuo in Falling_TA2){
+            yuo.Play();
+            yuo.playbackSpeed = 0.5f;
         }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
@@ -303,7 +362,16 @@ public class VFXcontroller : MonoBehaviour
             colorswap.enabled = true;
         } 
         yield return new WaitForSeconds(0.6f);
-        
+
+        foreach (ParticleSystem yuh in Sparks_TA3){
+            yuh.Play();
+        }
+
+        foreach (ParticleSystem yuo in Falling_TA3){
+            yuo.Play();
+            yuo.playbackSpeed = 0.5f;
+        }
+
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_TA3.SetColor("_GrassColor", grassColor);
             
@@ -315,10 +383,6 @@ public class VFXcontroller : MonoBehaviour
     }
 
     IEnumerator townArea4_VFX(){
-    
-        Debug.Log("huh");
-
-
 
         foreach (GameObject obj in townArea4){
             changy colorswap = obj.GetComponent<changy>();
@@ -328,6 +392,11 @@ public class VFXcontroller : MonoBehaviour
 
         foreach (ParticleSystem yuh in Sparks_TA4){
             yuh.Play();
+        }
+
+        foreach (ParticleSystem yuo in Falling_TA4){
+            yuo.Play();
+            yuo.playbackSpeed = 0.5f;
         }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
@@ -351,6 +420,11 @@ public class VFXcontroller : MonoBehaviour
         foreach (ParticleSystem yuh in Sparks_PA1){
             yuh.Play();
         }
+
+        foreach (ParticleSystem yuo in Falling_PA1){
+            yuo.Play();
+            yuo.playbackSpeed = 0.5f;
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_PA1.SetColor("_GrassColor", grassColor);
@@ -372,6 +446,11 @@ public class VFXcontroller : MonoBehaviour
 
         foreach (ParticleSystem yuh in Sparks_PA2){
             yuh.Play();
+        }
+
+        foreach (ParticleSystem yuo in Falling_PA2){
+            yuo.Play();
+            yuo.playbackSpeed = 0.5f;
         }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
@@ -396,6 +475,11 @@ public class VFXcontroller : MonoBehaviour
         foreach (ParticleSystem yuh in Sparks_PA3){
             yuh.Play();
         }
+
+        foreach (ParticleSystem yuo in Falling_PA3){
+            yuo.Play();
+            yuo.playbackSpeed = 0.5f;
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_PA3.SetColor("_GrassColor", grassColor);
@@ -417,6 +501,11 @@ public class VFXcontroller : MonoBehaviour
 
         foreach (ParticleSystem yuh in Sparks_PA4){
             yuh.Play();
+        }
+
+        foreach (ParticleSystem yuo in Falling_PA4){
+            yuo.Play();
+            yuo.playbackSpeed = 0.5f;
         }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
@@ -440,6 +529,11 @@ public class VFXcontroller : MonoBehaviour
         foreach (ParticleSystem yuh in Sparks_SA1){
             yuh.Play();
         }
+
+        foreach (ParticleSystem yuo in Falling_SA1){
+            yuo.Play();
+            yuo.playbackSpeed = 0.5f;
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_SA1.SetColor("_GrassColor", grassColor);
@@ -461,6 +555,11 @@ public class VFXcontroller : MonoBehaviour
 
         foreach (ParticleSystem yuh in Sparks_SA2){
             yuh.Play();
+        }
+
+        foreach (ParticleSystem yuo in Falling_SA2){
+            yuo.Play();
+            yuo.playbackSpeed = 0.5f;
         }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
@@ -484,6 +583,11 @@ public class VFXcontroller : MonoBehaviour
         foreach (ParticleSystem yuh in Sparks_SA3){
             yuh.Play();
         }
+
+        foreach (ParticleSystem yuo in Falling_SA3){
+            yuo.Play();
+            yuo.playbackSpeed = 0.5f;
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_SA3.SetColor("_GrassColor", grassColor);
@@ -505,11 +609,25 @@ public class VFXcontroller : MonoBehaviour
 
         ocean.SetActive(true);
 
-        foreach (ParticleSystem yuh in Sparks_Beach){
+        foreach (VisualEffect yuh in Sparks_Beach){
             yuh.Play();
+        }
+
+        yield return new WaitForSeconds(3f);
+
+        foreach (VisualEffect yuh in Sparks_Beach){
+            yuh.Stop();
         }
     }
 
+    IEnumerator color_final(){
+
+        yield return new WaitForSeconds(1f);    //change this depending on how long from cutscene u want house to change color
+        color_mcHouse();
+
+        yield return new WaitForSeconds(5f);   //when u want the remaining terrain + skybox to change
+        color_terrain();
+    }
 
 
     void Update(){
