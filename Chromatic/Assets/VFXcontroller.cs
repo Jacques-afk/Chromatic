@@ -644,6 +644,15 @@ public class VFXcontroller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F)){
             color_parkArea3(); 
         }
+        if (Input.GetKeyDown(KeyCode.J)){
+            color_parkArea2(); 
+        }
+        if (Input.GetKeyDown(KeyCode.O)){
+            color_parkArea1(); 
+        }
+        if (Input.GetKeyDown(KeyCode.L)){
+            color_parkArea1(); 
+        }
     }
 }
  
