@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LostSonQuestStep1 : MonoBehaviour
+public class LostSonQuestStep1 : QuestStep
 {
-    // Start is called before the first frame update
-    void Start()
+    private Spawner spawner;
+
+    //public Actio stopFollow;
+
+    private void Awake()
     {
-        
+        spawner = GetComponent<Spawner>();
+        spawner.SpawnObject();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            FinishQuestStep();
+        }
     }
 }
