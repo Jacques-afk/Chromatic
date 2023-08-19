@@ -204,6 +204,7 @@ public class VFXcontroller : MonoBehaviour
     IEnumerator townArea2_VFX(){
 
         foreach (GameObject obj in townArea2){
+            Debug.Log(obj.name);
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
@@ -216,11 +217,11 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return null;   
     }
 
     IEnumerator townArea4_VFX(){
-
+        Debug.Log(townArea4);
         foreach (GameObject obj in townArea4){
             Debug.Log(obj.name);
             changy colorswap = obj.GetComponent<changy>();
@@ -232,6 +233,7 @@ public class VFXcontroller : MonoBehaviour
     IEnumerator parkArea1_VFX(){
 
         foreach (GameObject obj in parkArea1){
+            Debug.Log(obj.name);
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
@@ -241,6 +243,7 @@ public class VFXcontroller : MonoBehaviour
     IEnumerator parkArea2_VFX(){
 
         foreach (GameObject obj in parkArea2){
+            Debug.Log(obj.name);
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
@@ -250,6 +253,7 @@ public class VFXcontroller : MonoBehaviour
     IEnumerator parkArea3_VFX(){
 
         foreach (GameObject obj in parkArea3){
+            Debug.Log(obj.name);
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
@@ -307,7 +311,7 @@ public class VFXcontroller : MonoBehaviour
     void Update(){
 
         if (Input.GetKeyDown(KeyCode.F)){
-            color_townArea4();  
+            color_terrain();  
         }
     }
 }
