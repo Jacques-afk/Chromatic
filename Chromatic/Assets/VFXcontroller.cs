@@ -93,7 +93,7 @@ public class VFXcontroller : MonoBehaviour
 
     public VisualEffect [] Sparks_Beach;
 
-    public ParticleSystem[] Fireworks;
+    public VisualEffect[] Fireworks;
     public ParticleSystem[] Confetti;
     public ParticleSystem[] Wind;
 
@@ -150,8 +150,12 @@ public class VFXcontroller : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(volcanoe());
-        ocean.SetActive(false);
+        // StartCoroutine(volcanoe());
+        // ocean.SetActive(false);       //to solve ocean shader not being greyscaled and dissapearing issue
+
+        // foreach (VisualEffect yuh in Fireworks){
+        //     yuh.Stop();                     //stop the final cutscene fireworks from playing
+        // }
     }
 
     IEnumerator volcanoe(){
@@ -265,7 +269,7 @@ public class VFXcontroller : MonoBehaviour
         } 
         yield return new WaitForSeconds(0.6f);                  //change this depending on how long u want when it is zooming out 
 
-        foreach (ParticleSystem yuh in Fireworks){      
+        foreach (VisualEffect yuh in Fireworks){      
             yuh.Play();
         }
 
@@ -319,7 +323,7 @@ public class VFXcontroller : MonoBehaviour
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_TA1.SetColor("_GrassColor", grassColor);
             
-        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        Color treeBark = new Color(1f, 1f, 1f, 1f);
         treeBark_TA1.color = treeBark;
 
         Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
@@ -348,7 +352,7 @@ public class VFXcontroller : MonoBehaviour
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_TA2.SetColor("_GrassColor", grassColor);
             
-        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        Color treeBark = new Color(1f, 1f, 1f, 1f);
         treeBark_TA2.color = treeBark;
 
         Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
@@ -375,7 +379,7 @@ public class VFXcontroller : MonoBehaviour
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_TA3.SetColor("_GrassColor", grassColor);
             
-        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        Color treeBark = new Color(1f, 1f, 1f, 1f);
         treeBark_TA3.color = treeBark;
 
         Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
@@ -390,23 +394,23 @@ public class VFXcontroller : MonoBehaviour
         } 
         yield return new WaitForSeconds(0.6f);
 
-        foreach (ParticleSystem yuh in Sparks_TA4){
-            yuh.Play();
-        }
+        // foreach (ParticleSystem yuh in Sparks_TA4){
+        //     yuh.Play();
+        // }
 
-        foreach (ParticleSystem yuo in Falling_TA4){
-            yuo.Play();
-            yuo.playbackSpeed = 0.5f;
-        }
+        // foreach (ParticleSystem yuo in Falling_TA4){
+        //     yuo.Play();
+        //     yuo.playbackSpeed = 0.5f;
+        // }
         
-        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        grass_TA4.SetColor("_GrassColor", grassColor);
+        // Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        // grass_TA4.SetColor("_GrassColor", grassColor);
             
-        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
-        treeBark_TA4.color = treeBark;
+        // Color treeBark = new Color(1f, 1f, 1f, 1f);;
+        // treeBark_TA4.color = treeBark;
 
-        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        treeLeaves_TA4.color = treeLeaves;
+        // Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        // treeLeaves_TA4.color = treeLeaves;
     }
 
     IEnumerator parkArea1_VFX(){
@@ -429,7 +433,7 @@ public class VFXcontroller : MonoBehaviour
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_PA1.SetColor("_GrassColor", grassColor);
             
-        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        Color treeBark = new Color(1f, 1f, 1f, 1f);
         treeBark_PA1.color = treeBark;
 
         Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
@@ -456,7 +460,7 @@ public class VFXcontroller : MonoBehaviour
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_PA2.SetColor("_GrassColor", grassColor);
             
-        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        Color treeBark = new Color(1f, 1f, 1f, 1f);
         treeBark_PA2.color = treeBark;
 
         Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
@@ -484,7 +488,7 @@ public class VFXcontroller : MonoBehaviour
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_PA3.SetColor("_GrassColor", grassColor);
             
-        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        Color treeBark = new Color(1f, 1f, 1f, 1f);
         treeBark_PA3.color = treeBark;
 
         Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
@@ -511,7 +515,7 @@ public class VFXcontroller : MonoBehaviour
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_PA4.SetColor("_GrassColor", grassColor);
             
-        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        Color treeBark = new Color(1f, 1f, 1f, 1f);
         treeBark_PA4.color = treeBark;
 
         Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
@@ -538,7 +542,7 @@ public class VFXcontroller : MonoBehaviour
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_SA1.SetColor("_GrassColor", grassColor);
             
-        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        Color treeBark = new Color(1f, 1f, 1f, 1f);
         treeBark_SA1.color = treeBark;
 
         Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
@@ -565,7 +569,7 @@ public class VFXcontroller : MonoBehaviour
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_SA2.SetColor("_GrassColor", grassColor);
             
-        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        Color treeBark = new Color(1f, 1f, 1f, 1f);
         treeBark_SA2.color = treeBark;
 
         Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
@@ -592,7 +596,7 @@ public class VFXcontroller : MonoBehaviour
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_SA3.SetColor("_GrassColor", grassColor);
             
-        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        Color treeBark = new Color(1f, 1f, 1f, 1f);
         treeBark_SA3.color = treeBark;
 
         Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
@@ -633,7 +637,7 @@ public class VFXcontroller : MonoBehaviour
     void Update(){
 
         if (Input.GetKeyDown(KeyCode.F)){
-            color_townArea2(); 
+            color_townArea4(); 
         }
     }
 }

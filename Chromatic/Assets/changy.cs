@@ -78,22 +78,22 @@ public class changy : MonoBehaviour
             {
                 material.SetColor("_Flash", Color.white * (flashtime / 2));   
                 flashtime += (Time.deltaTime * 40);       
-                Debug.Log("Flash increase started");               
-                yield return null;
             }
 
             if (flashtime >= 9f)
             {                        
                 flash = true;
-                Color change = Color.Lerp(material.GetColor("_Flash"), Color.black, 0.01f);
+                Color change = Color.Lerp(material.GetColor("_Flash"), Color.black, 0.05f);
                 material.SetColor("_Flash", change);   
                 material.SetFloat("_Strength", colortime);
                 colortime += Time.deltaTime;
+                Debug.Log("happy happy happy");
 
-                if (material.GetFloat("_Strength") >= 1)
-                {
-                    material.SetFloat("_Strength", 1f);
-                }  
+                float strength = material.GetFloat("_Strength");
+
+                if (strength > 1.2f){   //value here is how satured you want you're color to be :0
+                    flashStop = true;
+                } 
             }
         }
     }
