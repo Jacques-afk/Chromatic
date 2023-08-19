@@ -77,8 +77,26 @@ public class VFXcontroller : MonoBehaviour
     public Material treeLeaves_SA3;
     public Material treeBark_SA3;
 
+    public ParticleSystem[] Sparks_PA1;
+    public ParticleSystem[] Sparks_PA2;
+    public ParticleSystem[] Sparks_PA3;
+    public ParticleSystem[] Sparks_PA4;
 
-    
+    public ParticleSystem[] Sparks_TA1;
+    public ParticleSystem[] Sparks_TA2;
+    public ParticleSystem[] Sparks_TA3;
+    public ParticleSystem[] Sparks_TA4;
+
+    public ParticleSystem[] Sparks_SA1;
+    public ParticleSystem[] Sparks_SA2;
+    public ParticleSystem[] Sparks_SA3;
+
+    public ParticleSystem[] Sparks_Beach;
+
+    public ParticleSystem[] Fireworks;
+    public ParticleSystem[] Confetti;
+
+
     void Awake(){
 
         instance = this;
@@ -109,6 +127,7 @@ public class VFXcontroller : MonoBehaviour
     void Start()
     {
         StartCoroutine(volcanoe());
+        ocean.SetActive(false);
     }
 
     IEnumerator volcanoe(){
@@ -192,8 +211,6 @@ public class VFXcontroller : MonoBehaviour
         StartCoroutine(beach_VFX());
     }
 
-
-
     IEnumerator Cafe_VFX(){
         foreach (GameObject obj in cafe){
             changy colorswap = obj.GetComponent<changy>();
@@ -218,7 +235,15 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return new WaitForSeconds(0.6f);                  //change this depending on how long u want :o
+
+        foreach (ParticleSystem yuh in Confetti){
+            yuh.Play();
+        }
+
+        foreach (ParticleSystem yuh in Fireworks){
+            yuh.Play();
+        }
     }
 
     IEnumerator MChouse_VFX(){
@@ -252,11 +277,14 @@ public class VFXcontroller : MonoBehaviour
     IEnumerator townArea2_VFX(){
 
         foreach (GameObject obj in townArea2){
-            Debug.Log(obj.name);
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
         yield return new WaitForSeconds(0.6f);
+
+        foreach (ParticleSystem yuh in Sparks_TA2){
+            yuh.Play();
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_TA2.SetColor("_GrassColor", grassColor);
@@ -287,12 +315,20 @@ public class VFXcontroller : MonoBehaviour
     }
 
     IEnumerator townArea4_VFX(){
+    
+        Debug.Log("huh");
+
+
 
         foreach (GameObject obj in townArea4){
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
         yield return new WaitForSeconds(0.6f);
+
+        foreach (ParticleSystem yuh in Sparks_TA4){
+            yuh.Play();
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_TA4.SetColor("_GrassColor", grassColor);
@@ -311,6 +347,10 @@ public class VFXcontroller : MonoBehaviour
             colorswap.enabled = true;
         } 
         yield return new WaitForSeconds(0.6f);
+
+        foreach (ParticleSystem yuh in Sparks_PA1){
+            yuh.Play();
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_PA1.SetColor("_GrassColor", grassColor);
@@ -329,6 +369,10 @@ public class VFXcontroller : MonoBehaviour
             colorswap.enabled = true;
         } 
         yield return new WaitForSeconds(0.6f);
+
+        foreach (ParticleSystem yuh in Sparks_PA2){
+            yuh.Play();
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_PA2.SetColor("_GrassColor", grassColor);
@@ -348,6 +392,10 @@ public class VFXcontroller : MonoBehaviour
             colorswap.enabled = true;
         } 
         yield return new WaitForSeconds(0.6f);
+
+        foreach (ParticleSystem yuh in Sparks_PA3){
+            yuh.Play();
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_PA3.SetColor("_GrassColor", grassColor);
@@ -366,6 +414,10 @@ public class VFXcontroller : MonoBehaviour
             colorswap.enabled = true;
         } 
         yield return new WaitForSeconds(0.6f);
+
+        foreach (ParticleSystem yuh in Sparks_PA4){
+            yuh.Play();
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_PA4.SetColor("_GrassColor", grassColor);
@@ -384,6 +436,10 @@ public class VFXcontroller : MonoBehaviour
             colorswap.enabled = true;
         } 
         yield return new WaitForSeconds(0.6f);
+
+        foreach (ParticleSystem yuh in Sparks_SA1){
+            yuh.Play();
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_SA1.SetColor("_GrassColor", grassColor);
@@ -402,6 +458,10 @@ public class VFXcontroller : MonoBehaviour
             colorswap.enabled = true;
         } 
         yield return new WaitForSeconds(0.6f);
+
+        foreach (ParticleSystem yuh in Sparks_SA2){
+            yuh.Play();
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_SA2.SetColor("_GrassColor", grassColor);
@@ -420,6 +480,10 @@ public class VFXcontroller : MonoBehaviour
             colorswap.enabled = true;
         } 
         yield return new WaitForSeconds(0.6f);
+
+        foreach (ParticleSystem yuh in Sparks_SA3){
+            yuh.Play();
+        }
         
         Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
         grass_SA3.SetColor("_GrassColor", grassColor);
@@ -437,14 +501,21 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return new WaitForSeconds(0.6f);
+
+        ocean.SetActive(true);
+
+        foreach (ParticleSystem yuh in Sparks_Beach){
+            yuh.Play();
+        }
     }
+
 
 
     void Update(){
 
         if (Input.GetKeyDown(KeyCode.F)){
-            Debug.Log("you removed the option to color a part of the town jac >:("); 
+            color_townArea2(); 
         }
     }
 }
