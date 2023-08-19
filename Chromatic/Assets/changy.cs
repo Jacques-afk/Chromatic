@@ -30,7 +30,7 @@ public class changy: MonoBehaviour
 
     IEnumerator barrier(){
         float time = 1f;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1f);
         while (time > 0f){                                    
             material.SetFloat("_Transparency", time);
             time -= Time.deltaTime;

@@ -26,6 +26,7 @@ TagManager:
   - parkArea3
   - parkArea4
   - chimney
+  - terrain
   layers:
   - Default
   - TransparentFX
