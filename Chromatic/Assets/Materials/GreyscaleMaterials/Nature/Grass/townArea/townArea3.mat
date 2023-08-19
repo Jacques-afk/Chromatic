@@ -44,7 +44,7 @@ Material:
     - _SwayAmplitude: 0.2
     - _SwaySpeed: 2
     m_Colors:
-    - _GrassColor: {r: 0.18431373, g: 0.6784314, b: 0.09411765, a: 0}
+    - _GrassColor: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &3000365962779341406
 MonoBehaviour:

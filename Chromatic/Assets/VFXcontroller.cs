@@ -9,12 +9,14 @@ public class VFXcontroller : MonoBehaviour
     public static VFXcontroller instance;
 
     public VisualEffect volcanoeVFX;
-    public ParticleSystem flashbang;
-    public GameObject sea;
-    public GameObject pond;
-
     public float volcanoe_Speed = 0.02f;
 
+    public GameObject ocean;
+    public GameObject fakeOcean;
+
+    public GameObject pond;
+    public GameObject fakePond;
+ 
     public GameObject[] petshop;
     public GameObject[] cafe;
     public GameObject[] MChome;
@@ -40,6 +42,42 @@ public class VFXcontroller : MonoBehaviour
     public Material grass_TA2;
     public Material grass_TA3;
     public Material grass_TA4;
+
+    public Material grass_PA1;
+    public Material grass_PA2;
+    public Material grass_PA3;
+    public Material grass_PA4;
+
+    public Material grass_SA1;
+    public Material grass_SA2;
+    public Material grass_SA3;
+
+    public Material treeLeaves_TA1;
+    public Material treeBark_TA1;
+    public Material treeLeaves_TA2;
+    public Material treeBark_TA2;
+    public Material treeLeaves_TA3;
+    public Material treeBark_TA3;
+    public Material treeLeaves_TA4;
+    public Material treeBark_TA4;
+
+    public Material treeLeaves_PA1;
+    public Material treeBark_PA1;
+    public Material treeLeaves_PA2;
+    public Material treeBark_PA2;
+    public Material treeLeaves_PA3;
+    public Material treeBark_PA3;
+    public Material treeLeaves_PA4;
+    public Material treeBark_PA4;
+
+    public Material treeLeaves_SA1;
+    public Material treeBark_SA1;
+    public Material treeLeaves_SA2;
+    public Material treeBark_SA2;
+    public Material treeLeaves_SA3;
+    public Material treeBark_SA3;
+
+
     
     void Awake(){
 
@@ -65,17 +103,18 @@ public class VFXcontroller : MonoBehaviour
         sideArea3 = GameObject.FindGameObjectsWithTag("sideArea3");
 
         beach = GameObject.FindGameObjectsWithTag("beach");
+
     }
 
-    // void Start()
-    // {
-    //     StartCoroutine(volcanoe());
-    // }
+    void Start()
+    {
+        StartCoroutine(volcanoe());
+    }
 
-    // IEnumerator volcanoe(){
-    //     yield return new WaitForSeconds(1.5f);
-    //     volcanoeVFX.playRate = volcanoe_Speed;
-    // }
+    IEnumerator volcanoe(){
+        yield return new WaitForSeconds(1.5f);
+        volcanoeVFX.playRate = volcanoe_Speed;
+    }
 
 
     
@@ -114,6 +153,9 @@ public class VFXcontroller : MonoBehaviour
         StartCoroutine(parkArea4_VFX());
     }
 
+
+
+
     public void color_townArea1(){
         StartCoroutine(townArea1_VFX());
     }
@@ -129,6 +171,10 @@ public class VFXcontroller : MonoBehaviour
     public void color_townArea4(){
         StartCoroutine(townArea4_VFX());
     }
+
+
+
+
 
     public void color_sideArea1(){
         StartCoroutine(sideArea1_VFX());
@@ -153,11 +199,8 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         }
+        yield return null;
 
-        yield return new WaitForSeconds(1f);
-        flashbang.Play();
-        yield return new WaitForSeconds(0.8f);
-        flashbang.playbackSpeed = 0.9f;
     }
 
     IEnumerator Petshop_VFX(){
@@ -166,11 +209,7 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         }
-
-        yield return new WaitForSeconds(1f);
-        flashbang.Play();
-        yield return new WaitForSeconds(0.8f);
-        flashbang.playbackSpeed = 0.9f;
+        yield return null; 
     }
 
     IEnumerator terrain_VFX(){
@@ -198,7 +237,16 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return new WaitForSeconds(0.6f);
+        
+        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        grass_TA1.SetColor("_GrassColor", grassColor);
+            
+        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        treeBark_TA1.color = treeBark;
+
+        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        treeLeaves_TA1.color = treeLeaves;
     }
 
     IEnumerator townArea2_VFX(){
@@ -208,7 +256,16 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return new WaitForSeconds(0.6f);
+        
+        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        grass_TA2.SetColor("_GrassColor", grassColor);
+            
+        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        treeBark_TA2.color = treeBark;
+
+        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        treeLeaves_TA2.color = treeLeaves;
     }
 
     IEnumerator townArea3_VFX(){
@@ -217,37 +274,70 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;   
+        yield return new WaitForSeconds(0.6f);
+        
+        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        grass_TA3.SetColor("_GrassColor", grassColor);
+            
+        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        treeBark_TA3.color = treeBark;
+
+        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        treeLeaves_TA3.color = treeLeaves;  
     }
 
     IEnumerator townArea4_VFX(){
-        Debug.Log(townArea4);
+
         foreach (GameObject obj in townArea4){
-            Debug.Log(obj.name);
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return new WaitForSeconds(0.6f);
+        
+        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        grass_TA4.SetColor("_GrassColor", grassColor);
+            
+        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        treeBark_TA4.color = treeBark;
+
+        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        treeLeaves_TA4.color = treeLeaves;
     }
 
     IEnumerator parkArea1_VFX(){
 
         foreach (GameObject obj in parkArea1){
-            Debug.Log(obj.name);
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return new WaitForSeconds(0.6f);
+        
+        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        grass_PA1.SetColor("_GrassColor", grassColor);
+            
+        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        treeBark_PA1.color = treeBark;
+
+        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        treeLeaves_PA1.color = treeLeaves;
     }
 
     IEnumerator parkArea2_VFX(){
 
         foreach (GameObject obj in parkArea2){
-            Debug.Log(obj.name);
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return new WaitForSeconds(0.6f);
+        
+        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        grass_PA2.SetColor("_GrassColor", grassColor);
+            
+        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        treeBark_PA2.color = treeBark;
+
+        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        treeLeaves_PA2.color = treeLeaves;
     }
 
     IEnumerator parkArea3_VFX(){
@@ -257,7 +347,16 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return new WaitForSeconds(0.6f);
+        
+        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        grass_PA3.SetColor("_GrassColor", grassColor);
+            
+        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        treeBark_PA3.color = treeBark;
+
+        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        treeLeaves_PA3.color = treeLeaves;
     }
 
     IEnumerator parkArea4_VFX(){
@@ -266,7 +365,16 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return new WaitForSeconds(0.6f);
+        
+        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        grass_PA4.SetColor("_GrassColor", grassColor);
+            
+        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        treeBark_PA4.color = treeBark;
+
+        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        treeLeaves_PA4.color = treeLeaves;
     }
 
     IEnumerator sideArea1_VFX(){
@@ -275,7 +383,16 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return new WaitForSeconds(0.6f);
+        
+        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        grass_SA1.SetColor("_GrassColor", grassColor);
+            
+        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        treeBark_SA1.color = treeBark;
+
+        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        treeLeaves_SA1.color = treeLeaves;
     }
 
     IEnumerator sideArea2_VFX(){
@@ -284,7 +401,16 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return new WaitForSeconds(0.6f);
+        
+        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        grass_SA2.SetColor("_GrassColor", grassColor);
+            
+        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        treeBark_SA2.color = treeBark;
+
+        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        treeLeaves_SA2.color = treeLeaves;
     }
 
     IEnumerator sideArea3_VFX(){
@@ -293,7 +419,16 @@ public class VFXcontroller : MonoBehaviour
             changy colorswap = obj.GetComponent<changy>();
             colorswap.enabled = true;
         } 
-        yield return null;
+        yield return new WaitForSeconds(0.6f);
+        
+        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
+        grass_SA3.SetColor("_GrassColor", grassColor);
+            
+        Color treeBark = new Color(0f, 255f / 255f, 0f, 1.0f);
+        treeBark_SA3.color = treeBark;
+
+        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
+        treeLeaves_SA3.color = treeLeaves;
     }
 
     IEnumerator beach_VFX(){
@@ -306,12 +441,10 @@ public class VFXcontroller : MonoBehaviour
     }
 
 
-
-
     void Update(){
 
         if (Input.GetKeyDown(KeyCode.F)){
-            color_terrain();  
+            Debug.Log("you removed the option to color a part of the town jac >:("); 
         }
     }
 }
