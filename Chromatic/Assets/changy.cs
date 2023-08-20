@@ -24,14 +24,14 @@ public class changy : MonoBehaviour
     private Color createdColor;
 
     /// <summary>
-    /// Start is called before the first frame update.
+    /// When script has been activiated by the VFXcontroller script, it runs the following below.
     /// </summary>
     void Start()
     {
         go = this.gameObject;
         material = go.GetComponent<MeshRenderer>().material;
 
-        // Choose which coroutine to run based on the GameObject's name
+        // If object is detected as not a barrier, run the other function below.
         if (go.name == "barrier_gs")
         {
             StartCoroutine(DecreaseTransparencyCoroutine());
@@ -45,7 +45,6 @@ public class changy : MonoBehaviour
     /// <summary>
     /// Coroutine that gradually decreases transparency of the material for the barrier GameObject.
     /// </summary>
-    /// <returns>IEnumerator used for coroutine execution.</returns>
     IEnumerator DecreaseTransparencyCoroutine()
     {
         float time = 1f;
@@ -62,28 +61,27 @@ public class changy : MonoBehaviour
     /// <summary>
     /// Coroutine that handles color change and flashing effect for non-barrier GameObjects.
     /// </summary>
-    /// <returns>IEnumerator used for coroutine execution.</returns>
     IEnumerator ColorChangeCoroutine()
     {
-        float time = 0f;
+        float time = 0f;                //some values here are no longer in use
         float flashtime = 0f;
         float unflashtime = 1f;
         float colortime = 0f;
 
-        while (flashStop == false)
+        while (flashStop == false)               //while loop for color lerp 
         { 
             yield return new WaitForSeconds(0.001f);
 
             if (flashtime < 35f && flash == false)
             {
-                material.SetColor("_Flash", Color.white * (flashtime / 2));   
+                material.SetColor("_Flash", Color.white * (flashtime / 2));    //make it white and glow
                 flashtime += (Time.deltaTime * 40);       
             }
 
             if (flashtime >= 9f)
             {                        
-                flash = true;
-                Color change = Color.Lerp(material.GetColor("_Flash"), Color.black, 0.05f);
+                flash = true;       //stop the glow from the above if loop
+                Color change = Color.Lerp(material.GetColor("_Flash"), Color.black, 0.05f);            //change all the colors back
                 material.SetColor("_Flash", change);   
                 material.SetFloat("_Strength", colortime);
                 colortime += Time.deltaTime;

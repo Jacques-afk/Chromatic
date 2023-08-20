@@ -6,6 +6,10 @@ using UnityEngine.VFX;
 public class VFXcontroller : MonoBehaviour
 {
 
+     /// <summary>
+    /// Reference to objects in a certain area by tag, visual effects and particle systems.
+    /// </summary>
+
     public static VFXcontroller instance;
 
     public VisualEffect volcanoeVFX;
@@ -93,13 +97,13 @@ public class VFXcontroller : MonoBehaviour
 
     public VisualEffect [] Sparks_Beach;
 
-    public VisualEffect[] Fireworks;
+    public VisualEffect[] Fireworks;       //visual effects and particles
     public ParticleSystem[] Confetti;
     public ParticleSystem[] Wind;
 
 
     /// <summary>
-    /// Reference to the falling leaves, active them only when a place has been colored.
+    /// Reference to the falling leaves particles.
     /// </summary>
 
     public ParticleSystem[] Falling_PA1;
@@ -148,6 +152,10 @@ public class VFXcontroller : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Dissabling ocean and pond due to clipping issues and decreasing volcano vfx playbackrate.
+    /// </summary>
+
     void Start()
     {
         StartCoroutine(volcanoe());
@@ -164,6 +172,10 @@ public class VFXcontroller : MonoBehaviour
         volcanoeVFX.playRate = volcanoe_Speed;
     }
 
+    /// <summary>
+    /// Applying randomness to wind to make it seem more natural.
+    /// </summary>
+
     IEnumerator windApply(){
 
         foreach (ParticleSystem yuh in Wind){
@@ -173,6 +185,10 @@ public class VFXcontroller : MonoBehaviour
         }
 
     }
+
+    /// <summary>
+    /// Below are a list of functions which the player can call in order to color a specific area. Each function is tied to a coroutine.
+    /// </summary>
  
     public void color_Petshop(){         //interior
         StartCoroutine(Petshop_VFX());
@@ -242,6 +258,10 @@ public class VFXcontroller : MonoBehaviour
         StartCoroutine(color_final());
     }
 
+    /// <summary>
+    /// For almost every coroutine, below is the base functionality of activiating the color changing script stored inside each itme.
+    /// </summary>
+
     IEnumerator Cafe_VFX(){
         foreach (GameObject obj in cafe){
             changy colorswap = obj.GetComponent<changy>();
@@ -259,6 +279,10 @@ public class VFXcontroller : MonoBehaviour
         }
         yield return null; 
     }
+
+    /// <summary>
+    /// Used for final cutscene of the game where required to remove remaining greyscale effect and play visual effects.
+    /// </summary>
 
     IEnumerator terrain_VFX(){
 
@@ -281,6 +305,10 @@ public class VFXcontroller : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Color MC house.
+    /// </summary>
+
     IEnumerator MChouse_VFX(){
 
         foreach (GameObject obj in MChome){
@@ -290,7 +318,9 @@ public class VFXcontroller : MonoBehaviour
         yield return null;
     }
 
-
+    /// <summary>
+    /// All the code from each function now becomes repetitve, targetting the color changing script, waiting awhile and then playing the particles and changing the nature color in the area.
+    /// </summary>
 
     IEnumerator townArea1_VFX(){
 
@@ -629,6 +659,10 @@ public class VFXcontroller : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Can call upon this function to help make it easier for the final cutscene.
+    /// </summary>
+
     IEnumerator color_final(){
 
         yield return new WaitForSeconds(1f);    //change this depending on how long from cutscene u want house to change color
@@ -636,56 +670,6 @@ public class VFXcontroller : MonoBehaviour
 
         yield return new WaitForSeconds(5f);   //when u want the remaining terrain + skybox to change
         color_terrain();
-    }
-
-
-    void Update(){
-
-        if (Input.GetKeyDown(KeyCode.F)){
-            color_parkArea3(); 
-        }
-        if (Input.GetKeyDown(KeyCode.J)){
-            color_parkArea2(); 
-        }
-        if (Input.GetKeyDown(KeyCode.O)){
-            color_parkArea1(); 
-        }
-        if (Input.GetKeyDown(KeyCode.L)){
-            color_parkArea4(); 
-        }
-
-
-
-        if (Input.GetKeyDown(KeyCode.K)){
-            color_townArea1(); 
-        }
-        if (Input.GetKeyDown(KeyCode.S)){
-            color_townArea2(); 
-        }
-        if (Input.GetKeyDown(KeyCode.I)){
-            color_townArea3(); 
-        }
-        if (Input.GetKeyDown(KeyCode.Y)){
-            color_townArea4(); 
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.Z)){
-            color_sideArea1(); 
-        }
-        if (Input.GetKeyDown(KeyCode.X)){
-            color_sideArea2(); 
-        }
-        if (Input.GetKeyDown(KeyCode.C)){
-            color_sideArea3(); 
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.G)){
-            color_beach(); 
-        }
-
-
     }
 }
  
