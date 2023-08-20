@@ -202,39 +202,39 @@ public class VFXcontroller : MonoBehaviour
     /// </summary>
  
     public void colorNature_grey(){
-        grass_TA1.color = grey;
+        grass_TA1.SetColor("_GrassColor", grey); 
         treeLeaves_TA1.color = grey;
         treeBark_TA1.color = black;
-        grass_TA2.color = grey;
+        grass_TA2.SetColor("_GrassColor", grey);
         treeLeaves_TA2.color = grey;
         treeBark_TA2.color = black;
-        grass_TA3.color = grey;
+        grass_TA3.SetColor("_GrassColor", grey);
         treeLeaves_TA3.color = grey;
         treeBark_TA3.color = black;
-        grass_TA4.color = grey;
+        grass_TA4.SetColor("_GrassColor", grey);
         treeLeaves_TA4.color = grey;
         treeBark_TA4.color = black;
 
-        grass_PA1.color = grey;
+        grass_PA1.SetColor("_GrassColor", grey);
         treeLeaves_PA1.color = grey;
         treeBark_PA1.color = black;
-        grass_PA2.color = grey;
+        grass_PA2.SetColor("_GrassColor", grey);
         treeLeaves_PA2.color = grey;
         treeBark_PA2.color = black;
-        grass_PA3.color = grey;
+        grass_PA3.SetColor("_GrassColor", grey);
         treeLeaves_PA3.color = grey;
         treeBark_PA3.color = black;
-        grass_PA4.color = grey;
+        grass_PA4.SetColor("_GrassColor", grey);
         treeLeaves_PA4.color = grey;
         treeBark_PA4.color = black;
 
-        grass_SA1.color = grey;
+        grass_SA1.SetColor("_GrassColor", grey);
         treeLeaves_SA1.color = grey;
         treeBark_SA1.color = black;
-        grass_SA2.color = grey;
+        grass_SA2.SetColor("_GrassColor", grey);
         treeLeaves_SA2.color = grey;
         treeBark_SA2.color = black;
-        grass_SA3.color = grey;
+        grass_SA3.SetColor("_GrassColor", grey);
         treeLeaves_SA3.color = grey;
         treeBark_SA3.color = black;
     }
