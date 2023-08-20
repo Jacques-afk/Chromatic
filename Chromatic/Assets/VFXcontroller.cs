@@ -176,6 +176,7 @@ public class VFXcontroller : MonoBehaviour
         }
 
         colorNature_grey(); //to present all nature things to a black and white scale
+        windApply();
     }
 
     IEnumerator volcanoe(){
@@ -190,7 +191,7 @@ public class VFXcontroller : MonoBehaviour
     IEnumerator windApply(){
 
         foreach (ParticleSystem yuh in Wind){
-            int randomInt = Random.Range(0,14);
+            int randomInt = Random.Range(0,30);
             yield return new WaitForSeconds(randomInt);
             yuh.Play();
         }
