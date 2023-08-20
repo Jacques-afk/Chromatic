@@ -101,6 +101,15 @@ public class VFXcontroller : MonoBehaviour
     public ParticleSystem[] Confetti;
     public ParticleSystem[] Wind;
 
+    public Color white;
+    public Color black;
+    public Color grey;
+
+    public Color lightGreen;
+    public Color mediumGreen;
+    public Color darkGreen;
+    public Color lightOrange;
+    public Color mediumOrange; 
 
     /// <summary>
     /// Reference to the falling leaves particles.
@@ -165,6 +174,8 @@ public class VFXcontroller : MonoBehaviour
         foreach (VisualEffect yuh in Fireworks){
             yuh.Stop();                            //stop the final cutscene fireworks from playing
         }
+
+        colorNature_grey(); //to present all nature things to a black and white scale
     }
 
     IEnumerator volcanoe(){
@@ -190,6 +201,45 @@ public class VFXcontroller : MonoBehaviour
     /// Below are a list of functions which the player can call in order to color a specific area. Each function is tied to a coroutine.
     /// </summary>
  
+    public void colorNature_grey(){
+        grass_TA1.color = grey;
+        treeLeaves_TA1.color = grey;
+        treeBark_TA1.color = black;
+        grass_TA2.color = grey;
+        treeLeaves_TA2.color = grey;
+        treeBark_TA2.color = black;
+        grass_TA3.color = grey;
+        treeLeaves_TA3.color = grey;
+        treeBark_TA3.color = black;
+        grass_TA4.color = grey;
+        treeLeaves_TA4.color = grey;
+        treeBark_TA4.color = black;
+
+        grass_PA1.color = grey;
+        treeLeaves_PA1.color = grey;
+        treeBark_PA1.color = black;
+        grass_PA2.color = grey;
+        treeLeaves_PA2.color = grey;
+        treeBark_PA2.color = black;
+        grass_PA3.color = grey;
+        treeLeaves_PA3.color = grey;
+        treeBark_PA3.color = black;
+        grass_PA4.color = grey;
+        treeLeaves_PA4.color = grey;
+        treeBark_PA4.color = black;
+
+        grass_SA1.color = grey;
+        treeLeaves_SA1.color = grey;
+        treeBark_SA1.color = black;
+        grass_SA2.color = grey;
+        treeLeaves_SA2.color = grey;
+        treeBark_SA2.color = black;
+        grass_SA3.color = grey;
+        treeLeaves_SA3.color = grey;
+        treeBark_SA3.color = black;
+    }
+
+
     public void color_Petshop(){         //interior
         StartCoroutine(Petshop_VFX());
     }
@@ -351,14 +401,9 @@ public class VFXcontroller : MonoBehaviour
         /// Change the color of the trees and grass in that area.
         /// </summary>
 
-        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        grass_TA1.SetColor("_GrassColor", grassColor);
-            
-        Color treeBark = new Color(1f, 1f, 1f, 1f);
-        treeBark_TA1.color = treeBark;
-
-        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        treeLeaves_TA1.color = treeLeaves;
+        grass_TA1.SetColor("_GrassColor", mediumGreen);
+        treeBark_TA1.color = white;
+        treeLeaves_TA1.color = mediumGreen;
     }
 
 
@@ -380,14 +425,9 @@ public class VFXcontroller : MonoBehaviour
             yuo.playbackSpeed = 0.5f;
         }
         
-        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        grass_TA2.SetColor("_GrassColor", grassColor);
-            
-        Color treeBark = new Color(1f, 1f, 1f, 1f);
-        treeBark_TA2.color = treeBark;
-
-        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        treeLeaves_TA2.color = treeLeaves;
+        grass_TA2.SetColor("_GrassColor", lightGreen);
+        treeBark_TA2.color = white;
+        treeLeaves_TA2.color = lightGreen;
     }
 
     IEnumerator townArea3_VFX(){
@@ -407,14 +447,10 @@ public class VFXcontroller : MonoBehaviour
             yuo.playbackSpeed = 0.5f;
         }
 
-        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        grass_TA3.SetColor("_GrassColor", grassColor);
-            
-        Color treeBark = new Color(1f, 1f, 1f, 1f);
-        treeBark_TA3.color = treeBark;
-
-        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        treeLeaves_TA3.color = treeLeaves;  
+       
+        grass_TA3.SetColor("_GrassColor", mediumGreen); 
+        treeBark_TA3.color = white;
+        treeLeaves_TA3.color = mediumOrange;  
     }
 
     IEnumerator townArea4_VFX(){
@@ -433,15 +469,10 @@ public class VFXcontroller : MonoBehaviour
             yuo.Play();
             yuo.playbackSpeed = 0.5f;
         }
-        
-        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        grass_TA4.SetColor("_GrassColor", grassColor);
-            
-        Color treeBark = new Color(1f, 1f, 1f, 1f);;
-        treeBark_TA4.color = treeBark;
 
-        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        treeLeaves_TA4.color = treeLeaves;
+        grass_TA4.SetColor("_GrassColor", mediumGreen);
+        treeBark_TA4.color = white;
+        treeLeaves_TA4.color = darkGreen;
     }
 
     IEnumerator parkArea1_VFX(){
@@ -460,15 +491,10 @@ public class VFXcontroller : MonoBehaviour
             yuo.Play();
             yuo.playbackSpeed = 0.5f;
         }
-        
-        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        grass_PA1.SetColor("_GrassColor", grassColor);
-            
-        Color treeBark = new Color(1f, 1f, 1f, 1f);
-        treeBark_PA1.color = treeBark;
-
-        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        treeLeaves_PA1.color = treeLeaves;
+  
+        grass_PA1.SetColor("_GrassColor", mediumGreen);
+        treeBark_PA1.color = white;
+        treeLeaves_PA1.color = lightOrange;
     }
 
     IEnumerator parkArea2_VFX(){
@@ -488,14 +514,9 @@ public class VFXcontroller : MonoBehaviour
             yuo.playbackSpeed = 0.5f;
         }
         
-        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        grass_PA2.SetColor("_GrassColor", grassColor);
-            
-        Color treeBark = new Color(1f, 1f, 1f, 1f);
-        treeBark_PA2.color = treeBark;
-
-        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        treeLeaves_PA2.color = treeLeaves;
+        grass_PA2.SetColor("_GrassColor", mediumGreen);
+        treeBark_PA2.color = white;
+        treeLeaves_PA2.color = mediumGreen;
     }
 
     IEnumerator parkArea3_VFX(){
@@ -519,14 +540,10 @@ public class VFXcontroller : MonoBehaviour
             yuo.playbackSpeed = 0.5f;
         }
         
-        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        grass_PA3.SetColor("_GrassColor", grassColor);
-            
-        Color treeBark = new Color(1f, 1f, 1f, 1f);
-        treeBark_PA3.color = treeBark;
 
-        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        treeLeaves_PA3.color = treeLeaves;
+        grass_PA3.SetColor("_GrassColor", darkGreen);
+        treeBark_PA3.color = white;
+        treeLeaves_PA3.color = mediumGreen;
     }
 
     IEnumerator parkArea4_VFX(){
@@ -546,14 +563,10 @@ public class VFXcontroller : MonoBehaviour
             yuo.playbackSpeed = 0.5f;
         }
         
-        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        grass_PA4.SetColor("_GrassColor", grassColor);
-            
-        Color treeBark = new Color(1f, 1f, 1f, 1f);
-        treeBark_PA4.color = treeBark;
 
-        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        treeLeaves_PA4.color = treeLeaves;
+        grass_PA4.SetColor("_GrassColor", mediumGreen);
+        treeBark_PA4.color = white;
+        treeLeaves_PA4.color = mediumGreen;
     }
 
     IEnumerator sideArea1_VFX(){
@@ -573,14 +586,10 @@ public class VFXcontroller : MonoBehaviour
             yuo.playbackSpeed = 0.5f;
         }
         
-        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        grass_SA1.SetColor("_GrassColor", grassColor);
-            
-        Color treeBark = new Color(1f, 1f, 1f, 1f);
-        treeBark_SA1.color = treeBark;
 
-        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        treeLeaves_SA1.color = treeLeaves;
+        grass_SA1.SetColor("_GrassColor", lightGreen);
+        treeBark_SA1.color = white;
+        treeLeaves_SA1.color = lightGreen;
     }
 
     IEnumerator sideArea2_VFX(){
@@ -600,14 +609,10 @@ public class VFXcontroller : MonoBehaviour
             yuo.playbackSpeed = 0.5f;
         }
         
-        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        grass_SA2.SetColor("_GrassColor", grassColor);
-            
-        Color treeBark = new Color(1f, 1f, 1f, 1f);
-        treeBark_SA2.color = treeBark;
-
-        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        treeLeaves_SA2.color = treeLeaves;
+ 
+        grass_SA2.SetColor("_GrassColor", lightGreen);
+        treeBark_SA2.color = white;
+        treeLeaves_SA2.color = mediumGreen;
     }
 
     IEnumerator sideArea3_VFX(){
@@ -627,14 +632,9 @@ public class VFXcontroller : MonoBehaviour
             yuo.playbackSpeed = 0.5f;
         }
         
-        Color grassColor = new Color(0f, 255f / 255f, 0f, 1.0f);
-        grass_SA3.SetColor("_GrassColor", grassColor);
-            
-        Color treeBark = new Color(1f, 1f, 1f, 1f);
-        treeBark_SA3.color = treeBark;
-
-        Color treeLeaves = new Color(0f / 255f, 100f / 255f, 0f / 255f, 1.0f);
-        treeLeaves_SA3.color = treeLeaves;
+        grass_SA3.SetColor("_GrassColor", darkGreen);
+        treeBark_SA3.color = white;
+        treeLeaves_SA3.color = mediumGreen;
     }
 
     IEnumerator beach_VFX(){
@@ -670,6 +670,24 @@ public class VFXcontroller : MonoBehaviour
 
         yield return new WaitForSeconds(5f);   //when u want the remaining terrain + skybox to change
         color_terrain();
+    }
+
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.L)){
+            color_townArea1();
+            color_townArea2();
+            color_townArea3();
+            color_townArea4();
+
+            color_parkArea1();
+            color_parkArea2();
+            color_parkArea3();
+            color_parkArea4();
+
+            color_sideArea1();
+            color_sideArea2();
+            color_sideArea3();
+        }
     }
 }
  
